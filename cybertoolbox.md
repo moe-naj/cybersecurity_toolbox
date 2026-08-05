@@ -4,11 +4,10 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 14:56:00.000'
+last_edited_time: '2026-08-05 15:06:00.000'
 ---
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
- | dnSpy | .NET | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | ADRecon | Active Directory | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
  | Nltest | Active Directory | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Active Directory | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
@@ -94,7 +93,7 @@ last_edited_time: '2026-08-05 14:56:00.000'
  | UFW | Network | A simple command-line interface for managing the Linux `iptables`/`nftables` firewall (commonly on Ubuntu). | 
  | Zeek | Network | Network analysis framework that logs and understands network behavior. Related to Brim which explores its data. | 
  | Zui | Network | The modern Brim desktop app. Main use cases: DFIR, high-volume packer capture analysis, threat hunting, data analytics, and workflow integration. | 
- | oletools | Office | `oletools` is a Python toolkit for analyzing Microsoft Office documents and OLE files. It includes utilities like `**olevba**` (extract and deobfuscate VBA macros), `**oledump**` (inspect OLE streams), `**mraptor**` (detect suspicious macro patterns), and `**oleobj**` (extract embedded objects). It is commonly used for **static malware analysis** of malicious Office files. | 
+ | oletools | Office | `oletools` is a Python toolkit for analyzing Microsoft Office documents and OLE files. It includes utilities like `olevba` (extract and deobfuscate VBA macros), `oledump` (inspect OLE streams), `mraptor` (detect suspicious macro patterns), and `oleobj` (extract embedded objects). It is commonly used for **static malware analysis** of malicious Office files. | 
  | AlienVault OTX | OSINT | A crowd‑sourced threat intelligence platform where security teams and researchers share and consume IOCs (malicious IPs/domains/URLs/file hashes) plus context like rules and writeups, packaged as “pulses.” It’s used to enrich investigations and alerts, automate hunting/blocking via integrations and APIs with SIEM/SOAR/EDR tools, and follow emerging threats from trusted contributors. | 
  | crt.sh | OSINT | A public Certificate Transparency search site used to find certificates (and often subdomains/hostnames) issued for a domain by querying CT logs. | 
  | Shodan | OSINT | Shodan enables security teams to discover internet-facing devices and services across their organization or target scope, identifying vulnerable or misconfigured systems that could be exploited before attackers find them. Shodan is specifically designed to search for Internet-connected devices and systems. | 
@@ -116,6 +115,7 @@ last_edited_time: '2026-08-05 14:56:00.000'
  | Trivy | Vulnerabilities | An open-source vulnerability scanner for containers, container images, and infrastructure-as-code (plus SBOM and secrets scanning), used to catch known CVEs and misconfigurations before deploy. | 
  | Advanced Installer | Windows | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | Windows | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
+ | dnSpy | .NET | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | lnkinfo | Windows | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
  | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
  | LOLDrivers | Windows | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
