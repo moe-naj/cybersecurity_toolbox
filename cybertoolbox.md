@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 14:33:00.000'
+last_edited_time: '2026-08-05 14:49:00.000'
 ---
 [//]: # (table_of_contents is not supported)
 
@@ -87,23 +87,10 @@ last_edited_time: '2026-08-05 14:33:00.000'
  | DumpIt | Memory | A portable single-executable tool that captures a full snapshot of a live system's RAM to a file for offline forensic analysis. Creates a bit-for-bit copy of everything in physical memory, resulting in an output file that matches the system's RAM size exactly. | 
  | dwarf2json | Memory | Converts binary debug symbols (DWARF/PDB) into structured JSON so memory forensics frameworks like Volatility can map raw RAM bytes onto named kernel structures and types. | 
  | GuyMager | Memory | A Linux memory acquisition tool (a fork/variant of `LiME`) used to capture a live RAM dump for forensic analysis. | 
- | LiMe | Memory | LiME (Linux Memory Extractor) is a kernel module that acquires a live RAM dump from a running Linux system for forensic analysis (typically outputting to a file or over the network).
-  • Basic acquisition to local file
-`sudo insmod lime-5.15.0-48-generic.ko "path=/tmp/suspect_memory.lime format=lime"`
-
-  • Acquisition to external storage
-`sudo insmod lime-5.15.0-48-generic.ko "path=/mnt/usb/evidence.lime format=lime"` | 
- | MemProcFS | Memory | MemProcFS is a convenient way of viewing physical memory as files in a virtual file system. It's not technically mounting a disk image — it's *synthesizing* a filesystem view from in-memory artifacts. So when you browse it, you're seeing: **Processes** reconstructed from `EPROCESS` linked lists, **Files** pulled from the Windows file cache and memory-mapped regions, **Registry hives** that Windows keeps partially in memory, **Network connections**, handles, DLLs — all from kernel data structures
-
-• Basic command to mount a memory dump into forensic mode (similar to volatility but in filesystem format):
-`memprocfs.exe -f memory.dmp -forensic 1` | 
+ | LiMe | Memory | LiME (Linux Memory Extractor) is a kernel module that acquires a live RAM dump from a running Linux system for forensic analysis (typically outputting to a file or over the network). | 
+ | MemProcFS | Memory | MemProcFS is a convenient way of viewing physical memory as files in a virtual file system. It's not technically mounting a disk image — it's *synthesizing* a filesystem view from in-memory artifacts. So when you browse it, you're seeing: **Processes** reconstructed from `EPROCESS` linked lists, **Files** pulled from the Windows file cache and memory-mapped regions, **Registry hives** that Windows keeps partially in memory, **Network connections**, handles, DLLs — all from kernel data structures. | 
  | Volatility | Memory | A complete framework for analyzing disk images including memory, process, malware, regions, network, and other indicators from a dump file. | 
  | Brim | Network | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
- | DHCP | Network |   • Find currently assigned IPA on DHCP leases (useful on mounted virtual disks)
-`cat /var/lib/dhcp3/dhclient.eth0.leases`
-
-  • In Windows:
-`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Interface-GUID>\DhcpIPAddress` | 
  | editcap | Network | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
  | netsh | Network | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
  | NetworkMiner | Network | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
@@ -122,21 +109,8 @@ last_edited_time: '2026-08-05 14:33:00.000'
  | GoPhish | Phishing | GoPhish is an open-source phishing simulation and security awareness training platform for creating, sending, and tracking phishing campaigns. | 
  | MinusOne | PowerShell | MinusOne is an online PowerShell deobfuscator that takes Base64‑encoded UTF‑16 input and outputs a deobfuscated script (submissions are saved to improve the tool).
 [https://minusone.skyblue.team/](https://minusone.skyblue.team/) | 
- | Process Monitor (ProcMon) | Process | Multiple use cases to monitor Windows process activity in real-time, including:
-  • Process activity summary
-  • File summary, including grouping by extension
-  • Registry summary
-  • Stack summary
-  • Network summary
-  • Cross-reference summary | 
- | Process Explorer | Process | A Windows system utility that helps you monitor and manage running processes. Here are its main use cases:
-  • Monitoring & Troubleshooting
-  • Identifying Unknown Processes
-  • Finding Process Dependencies
-  • Killing Unresponsive Programs
-  • Security Investigation
-  • Analyzing Process Relationships
-  • File Locking Issues | 
+ | Process Monitor (ProcMon) | Process | Multiple use cases to monitor Windows process activity in real-time, including: Process activity summary, File summary (including grouping by extension), Registry summary, Stack summary, Network summary, Cross-reference summary. | 
+ | Process Explorer | Process | A Windows system utility that helps you monitor and manage running processes, covering main use cases like: Monitoring & Troubleshooting, Identifying Unknown Processes, Finding Process Dependencies, Killing Unresponsive Programs, Security Investigation, Analyzing Process Relationships, and File Locking Issues. | 
  | RECmd | Registry | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠
 Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
  | RegSeek | Registry | RegSeek is a Windows registry search and analysis utility used by forensic analysts to quickly locate keys/values/artifacts across live or offline registry hives. | 
@@ -146,17 +120,8 @@ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administr
  | WCE | Secrets | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
  | DCode | Timeline | DCode is a DFIR utility (in the Eric Zimmerman tools) used to decode/convert timestamps (e.g., FILETIME/Unix/various Windows formats) into human-readable dates. | 
  | PECmd | Timeline | PECmd is an Eric Zimmerman DFIR command-line tool that parses Windows Prefetch (`.pf`) files to extract program execution history and timestamps for forensic timeline analysis. | 
- | Plaso Framework | Timeline | Plaso is a digital forensics timeline framework that extracts timestamps from many artifact types (via parsers) and stores/normalizes them into a single “super timeline” for analysis:
-  • `**log2timeline **`**(****[log2timeline.py](http://log2timeline.py/)****)**: Main engine that parses source data (disk images, directories, files) and writes extracted event data into a timeline file (e.g., `.plaso`).
-  • `**psort **`**(****[psort.py](http://psort.py/)****)**: Reads a Plaso storage file and outputs events in sorted/filtered form (CSV/JSON/SQLite/etc.) using output modules.
-  • `**pinfo **`**(****[pinfo.py](http://pinfo.py/)****)**: Displays metadata about a Plaso storage file (e.g., how it was created, what parsers were used, counts).
-  • `**psteal **`**(****[psteal.py](http://psteal.py/)****)**: Copies/extracts event data from a Plaso storage file into another storage file (useful for carving out subsets).
-  • `**pfilter **`**(****[pfilter.py](http://pfilter.py/)****)**: Tests and validates Plaso filter expressions against event data (helps build correct filters).
-  • `**pview **`**(****[pview.py](http://pview.py/)****)**: Interactive terminal viewer to browse events stored in a Plaso file.
-  • `**plaso_extract**`: Runs targeted extraction/export workflows to create timeline outputs from a Plaso storage file (wrapper around psort-style exports). | 
- | Timeline Explorer | Timeline | View CSV and Excel files, filter, group, sort, etc. with ease.
-[https://ericzimmerman.github.io/#!index.md](https://ericzimmerman.github.io/#!index.md)
-Use **EvtxECmd first **to parse all Windows event logs together into one CSV, then load the CSV into Timeline explorer for proper filtering and viewing | 
+ | Plaso Framework | Timeline | Plaso is a digital forensics timeline framework that extracts timestamps from many artifact types via parsers and normalizes them into a single "super timeline" for analysis. | 
+ | Timeline Explorer | Timeline | A tool to view CSV and Excel files with easy filtering, grouping, and sorting — the typical workflow is to first use EvtxECmd to parse all Windows event logs into one CSV, then load that CSV into Timeline Explorer for filtering and viewing. | 
  | Trivy | Vulnerabilities | An open-source vulnerability scanner for containers, container images, and infrastructure-as-code (plus SBOM and secrets scanning), used to catch known CVEs and misconfigurations before deploy. | 
  | Advanced Installer | Windows | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | Windows | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
