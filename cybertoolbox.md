@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 14:49:00.000'
+last_edited_time: '2026-08-05 14:51:00.000'
 ---
 [//]: # (table_of_contents is not supported)
 
@@ -111,8 +111,7 @@ last_edited_time: '2026-08-05 14:49:00.000'
 [https://minusone.skyblue.team/](https://minusone.skyblue.team/) | 
  | Process Monitor (ProcMon) | Process | Multiple use cases to monitor Windows process activity in real-time, including: Process activity summary, File summary (including grouping by extension), Registry summary, Stack summary, Network summary, Cross-reference summary. | 
  | Process Explorer | Process | A Windows system utility that helps you monitor and manage running processes, covering main use cases like: Monitoring & Troubleshooting, Identifying Unknown Processes, Finding Process Dependencies, Killing Unresponsive Programs, Security Investigation, Analyzing Process Relationships, and File Locking Issues. | 
- | RECmd | Registry | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠
-Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
+ | RECmd | Registry | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
  | RegSeek | Registry | RegSeek is a Windows registry search and analysis utility used by forensic analysts to quickly locate keys/values/artifacts across live or offline registry hives. | 
  | Registry Explorer | Registry | A GUI-based forensic registry viewer that supports loading offline hives, recovering deleted keys, and replaying transaction logs. | 
  | spaCy | Secrets | A Python NLP library you can use to build/customize named-entity recognition to find and label PII in text (names, locations, orgs, IDs) for data discovery, redaction, and DLP workflows. | 
@@ -129,10 +128,4 @@ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administr
  | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion: [https://lolbas-project.github.io/](https://lolbas-project.github.io/) | 
  | LOLDrivers | Windows | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
  | wevtutil | Windows | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
-
-# Extended Tool Guide
-
-[//]: # (child_page is not supported)
-
-[//]: # (child_page is not supported)
 
