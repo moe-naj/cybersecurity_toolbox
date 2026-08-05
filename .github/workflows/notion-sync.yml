@@ -12,14 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: notion-sync
         uses: YouXam/Notion-GitHub-Sync@v2
         with:
           notion_token: ${{ secrets.NOTION_TOKEN }}
+
       - name: commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "sync notion page"
-          git push
+
+          # only stage actual markdown content, never the tool's own cloned folders
+          git add '*.md'
+
+          git diff --staged --quiet || git commit -m "sync notion page"
+
+          # avoid non-fast-forward rejection by syncing with remote first
+          git pull --rebase origin main
+          git push origin main
