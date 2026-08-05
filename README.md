@@ -1,14 +1,14 @@
 # Cybersecurity Toolbox
 
-A personal, living reference of every cybersecurity tool I've used or evaluated — organized by use case rather than alphabetically, so it's easy to scan for "what do I reach for on X kind of job" instead of hunting an A-Z list from memory.
+A personal, living reference of every cybersecurity tool I've used or evaluated, organized by use case rather than alphabetically, so it's easy to scan for "what do I reach for on X kind of job" instead of hunting an A-Z list from memory.
 
 ## How it's organized
 
-The table is sorted by **Scope** (the use case or domain a tool belongs to — e.g. Memory, Network, Disk, Registry, Timeline, Malware, OSINT) rather than by tool name. Each entry includes a short description of what the tool does and, where useful, a concrete example command to get started.
+The table is sorted by **Scope** (the use case or domain a tool belongs to, e.g. Memory, Network, Disk, Registry, Timeline, Malware, OSINT) rather than by tool name. Each entry includes a short description of what the tool does and, where useful, a concrete example command to get started.
 
-This list spans the full range of offensive and defensive security work — reverse engineering, DFIR, memory/disk forensics, network analysis, Active Directory, cloud, malware analysis, OSINT, and phishing/adversary simulation tooling.
+This list spans the full range of offensive and defensive security work, reverse engineering, DFIR, memory/disk forensics, network analysis, Active Directory, cloud, malware analysis, OSINT, and phishing/adversary simulation tooling.
 
-The list will be updated periodically as I discover new tools, retire outdated ones, or refine descriptions — so expect it to grow and shift over time.
+The list will be updated periodically as I discover new tools, retire outdated ones, or refine descriptions, so expect it to grow and shift over time.
 
 ## Disclaimers
 
