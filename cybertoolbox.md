@@ -4,13 +4,12 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 14:54:00.000'
+last_edited_time: '2026-08-05 14:56:00.000'
 ---
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
  | dnSpy | .NET | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
- | ADRecon | Active Directory | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors.
-`\.\ADRecon.ps1 -Domain 'corp.local' -User 'administrator' -Password 'P@ssw0rd'` | 
+ | ADRecon | Active Directory | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
  | Nltest | Active Directory | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Active Directory | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | ALEAPP | Android | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
