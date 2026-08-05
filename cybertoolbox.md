@@ -4,12 +4,8 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 14:51:00.000'
+last_edited_time: '2026-08-05 14:54:00.000'
 ---
-[//]: # (table_of_contents is not supported)
-
-# General
-
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
  | dnSpy | .NET | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
@@ -43,6 +39,7 @@ last_edited_time: '2026-08-05 14:51:00.000'
  | Bandit | Code | An open-source static analysis (SAST) tool that scans Python code for common security issues (hardcoded secrets, insecure functions, weak crypto, risky subprocess usage) before it ships. | 
  | DB Browser for SQLite | Database | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
  | de4js | Deobfuscation | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
+ | MinusOne | Deobfuscation | MinusOne is an online PowerShell deobfuscator that takes Base64‑encoded UTF‑16 input and outputs a deobfuscated script (submissions are saved to improve the tool). | 
  | Arsenal Image Mounter (AIM) | Disk | A Windows forensics tool that mounts disk images (e.g., E01/RAW/VHD/`dd`) as read-only virtual drives so you can analyze them like a live disk. | 
  | Autopsy | Disk | Autopsy is an open-source digital forensics platform (built on The Sleuth Kit) used to analyze disk images and file systems to recover artifacts and build a timeline of user/system activity. | 
  | dd | Disk | A low-level disk copy/imaging command that reads from a block device/file and writes a bit‑for‑bit output (commonly used to create forensic disk images). | 
@@ -73,9 +70,7 @@ last_edited_time: '2026-08-05 14:51:00.000'
  | EvtxECmd | Logs | **EvtxECmd** is a fast, command-line forensic tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
  | HxD | Hex | HxD is a lightweight Windows hex editor and disk/memory editor used to view, search, and modify raw bytes in files, drives, and RAM for forensic or reverse-engineering work. | 
  | aide | Integrity | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
- | AutoIt Extractor | Malware | Decompiles or extracts scripts and resources from AutoIt-compiled executables. It helps reverse engineers inspect the original AutoIt code or embedded data within compiled `.exe` files.
-  • Look for bin files to extract from the tool then save for analysis
-[https://github.com/digitalsleuth/autoit-extractor](https://github.com/digitalsleuth/autoit-extractor) | 
+ | AutoIt Extractor | Malware | Decompiles or extracts scripts and resources from AutoIt-compiled executables. It helps reverse engineers inspect the original AutoIt code or embedded data within compiled `.exe` files. | 
  | chkrootkit | Malware | `chkrootkit `is a Linux command-line tool that scans a system for signs of rootkits by checking common binaries, processes, and known compromise indicators. | 
  | pe-sieve | Malware | Dump the malware’s process memory, revealing its actual payload by overcoming runtime obfuscation. Run a tool like Process Hacker to identify the process ID to pass to `pe-sieve`. Afterwards, analyze the components dumped using a tool such as Detect It Easy (DIE). | 
  | pestudio | Malware | A Windows PE malware triage tool that statically analyzes executables (imports, strings, sections, headers, indicators) to quickly spot suspicious traits without running the sample. | 
@@ -107,8 +102,6 @@ last_edited_time: '2026-08-05 14:51:00.000'
  | UPX | Packing | Used to compress and decompress executable files, reducing their size without affecting functionality. It’s used for packing binaries and can also be used to unpack them for analysis. | 
  | Evilgnix | Phishing | Evilginx2 is an open-source adversary-in-the-middle (AiTM) phishing framework that uses a reverse proxy to capture credentials and session cookies, enabling bypass of MFA in many web login flows. | 
  | GoPhish | Phishing | GoPhish is an open-source phishing simulation and security awareness training platform for creating, sending, and tracking phishing campaigns. | 
- | MinusOne | PowerShell | MinusOne is an online PowerShell deobfuscator that takes Base64‑encoded UTF‑16 input and outputs a deobfuscated script (submissions are saved to improve the tool).
-[https://minusone.skyblue.team/](https://minusone.skyblue.team/) | 
  | Process Monitor (ProcMon) | Process | Multiple use cases to monitor Windows process activity in real-time, including: Process activity summary, File summary (including grouping by extension), Registry summary, Stack summary, Network summary, Cross-reference summary. | 
  | Process Explorer | Process | A Windows system utility that helps you monitor and manage running processes, covering main use cases like: Monitoring & Troubleshooting, Identifying Unknown Processes, Finding Process Dependencies, Killing Unresponsive Programs, Security Investigation, Analyzing Process Relationships, and File Locking Issues. | 
  | RECmd | Registry | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
@@ -125,7 +118,7 @@ last_edited_time: '2026-08-05 14:51:00.000'
  | Advanced Installer | Windows | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | Windows | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
  | lnkinfo | Windows | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
- | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion: [https://lolbas-project.github.io/](https://lolbas-project.github.io/) | 
+ | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
  | LOLDrivers | Windows | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
  | wevtutil | Windows | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
 
