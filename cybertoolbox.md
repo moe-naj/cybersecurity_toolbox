@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-05 15:06:00.000'
+last_edited_time: '2026-08-06 20:51:00.000'
 ---
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
@@ -12,26 +12,28 @@ last_edited_time: '2026-08-05 15:06:00.000'
  | Nltest | Active Directory | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Active Directory | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | ALEAPP | Android | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
- | APK Studio | Android | A GUI front-end for apktool that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
- | jadx | Android | Dex to Java decompiler. Command line and GUI tools for producing Java source code from Android Dex and APK files. | 
+ | APK Studio | Android | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
  | BGP Tools | BGP | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Capa | Binary | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
  | CFF Explorer | Binary | Raw dump a resource inside an executable to disk for further analysis. If the dumped resource is a DLL, you can use dnSpy to disassemble it for analysis. | 
  | checksec | Binary | A command-line tool that reports common binary exploit mitigations (e.g., NX, PIE, RELRO, canary) for an executable; example: `checksec --file ./a.out`. | 
  | Cutter | Binary | A cross‑platform GUI front-end for radare2 used to disassemble/decompile and analyze binaries during reverse engineering. | 
+ | Dedaub | Binary | A smart contract decompiler tool for Ethereum (EVM) bytecode that reconstructs higher-level logic from on‑chain/public contract bytecode (useful when source isn’t verified) to understand behavior, identify risky patterns, and aid audits/incident response. | 
  | Detect It Easy | Binary | Used for analyzing binary files to identify their compiler, packer, or cryptor. It provides detailed information about executable formats and supports multiple architectures and file types. | 
  | Floss | Binary | A malware/forensics tool that extracts and deobfuscates (including runtime-decoded) strings from executables to reveal hidden IOCs like URLs, file paths, and commands. Example: `floss malware.exe > floss_strings.txt` | 
  | Ghidra | Binary | A reverse engineering suite (from the NSA) used to disassemble, decompile, and analyze compiled binaries. | 
+ | HxD | Binary | HxD is a lightweight Windows hex editor and disk/memory editor used to view, search, and modify raw bytes in files, drives, and RAM for forensic or reverse-engineering work. | 
  | IDA Pro | Binary | Interactive DisAssembler is a disassembler/decompiler that turns compiled binaries (like the malicious driver or payload here) back into readable assembly or pseudo-C — its main cyber use case is static reverse engineering: figuring out what a piece of malware or an exploit actually does without running it. | 
+ | jadx | Binary | Dex to Java decompiler. Command line and GUI tools for producing Java source code from Android Dex and APK files. | 
+ | JD-GUI | Binary | A standalone Windows GUI tool that decompiles Java `.class` files and `.jar` archives back into readable Java source code, letting you inspect the actual logic inside a Java library without needing the original source. | 
  | nm | Binary | A `binutils` command that lists symbols (functions/variables) from an object file or binary to help with reverse engineering/debugging; example: `nm -C ./a.out | head`. | 
+ | Online Solidity Decompiler | Binary | A web-based tool that decompiles EVM bytecode (deployed Ethereum contracts) into a readable, Solidity-like representation for reverse engineering and analysis. | 
  | pe-bear | Binary | A static PE-file inspector/editor that lets you visually parse and navigate a binary's headers, sections, and data directories (imports, exports, TLS, resources, etc.) without executing it. | 
  | Pev | Binary | `pev` is an open-source, cross-platform command-line toolkit for analyzing Windows PE (Portable Executable) files (now renamed/rebranded as the `readp`e project). | 
  | pyinstxtractor | Binary | Extracts embedded .pyc/resources from a PyInstaller-packed .exe for analysis; example: `python pyinstxtractor.py sample.exe`. | 
  | pylingual | Binary | Python decompiler that turns compiled `.pyc` (often extracted from malware/droppers) back into readable source; example: `pylingual -o out_dir dumped_module.pyc` . | 
  | r2 | Binary | A command-line reverse-engineering framework/disassembler/debugger for analyzing binaries; example: `r2 -A ./a.out`. | 
  | scdbg | Binary | A Windows shellcode analysis tool that emulates/traces shellcode to reveal its behavior (e.g., API calls, decoded strings, and IOCs) without running it on a real host. | 
- | Dedaub | Blockchain | A smart contract decompiler tool for Ethereum (EVM) bytecode that reconstructs higher-level logic from on‑chain/public contract bytecode (useful when source isn’t verified) to understand behavior, identify risky patterns, and aid audits/incident response. | 
- | Online Solidity Decompiler | Blockchain | A web-based tool that decompiles EVM bytecode (deployed Ethereum contracts) into a readable, Solidity-like representation for reverse engineering and analysis. | 
  | Pacu | Cloud | An open‑source AWS exploitation framework (post‑compromise cloud pentest tool) that uses modular commands to enumerate an AWS environment and attempt privilege escalation, persistence, and data access using stolen/assumed AWS credentials. | 
  | TrailInspector | Cloud | A utility for parsing and investigating AWS CloudTrail audit logs to reconstruct and analyze suspicious cloud API activity. | 
  | Bandit | Code | An open-source static analysis (SAST) tool that scans Python code for common security issues (hardcoded secrets, insecure functions, weak crypto, risky subprocess usage) before it ships. | 
@@ -65,11 +67,10 @@ last_edited_time: '2026-08-05 15:06:00.000'
  | uniq | Filtering | Collapse and count adjacent duplicate lines, often after `sort`: `sort file.txt | uniq -c` | 
  | garak | LLM | An open-source vulnerability scanner for LLMs that probes models for weaknesses like prompt injection, jailbreaks, data leakage, and other failure modes using automated adversarial test suites. | 
  | LLMmap | LLM | A fingerprinting technique that identifies which specific LLM (and version) is powering a black-box application by sending crafted probe queries and analyzing response patterns to match against known model signatures. | 
- | EvtxECmd | Logs | **EvtxECmd** is a fast, command-line forensic tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
- | HxD | Hex | HxD is a lightweight Windows hex editor and disk/memory editor used to view, search, and modify raw bytes in files, drives, and RAM for forensic or reverse-engineering work. | 
  | aide | Integrity | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
  | AutoIt Extractor | Malware | Decompiles or extracts scripts and resources from AutoIt-compiled executables. It helps reverse engineers inspect the original AutoIt code or embedded data within compiled `.exe` files. | 
  | chkrootkit | Malware | `chkrootkit `is a Linux command-line tool that scans a system for signs of rootkits by checking common binaries, processes, and known compromise indicators. | 
+ | FakeNet-NG | Malware | A Windows tool that simulates network services (DNS, HTTP, etc.) on an isolated analysis machine, tricking malware into "phoning home" so you can observe its C2 traffic and behavior without it ever reaching the real internet. | 
  | pe-sieve | Malware | Dump the malware’s process memory, revealing its actual payload by overcoming runtime obfuscation. Run a tool like Process Hacker to identify the process ID to pass to `pe-sieve`. Afterwards, analyze the components dumped using a tool such as Detect It Easy (DIE). | 
  | pestudio | Malware | A Windows PE malware triage tool that statically analyzes executables (imports, strings, sections, headers, indicators) to quickly spot suspicious traits without running the sample. | 
  | rkhunter | Malware | `rkhunter `(Rootkit Hunter) is a Linux security scanner that checks for rootkits and related threats by validating files, permissions, and system configuration against known suspicious patterns. | 
@@ -105,8 +106,9 @@ last_edited_time: '2026-08-05 15:06:00.000'
  | RECmd | Registry | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
  | RegSeek | Registry | RegSeek is a Windows registry search and analysis utility used by forensic analysts to quickly locate keys/values/artifacts across live or offline registry hives. | 
  | Registry Explorer | Registry | A GUI-based forensic registry viewer that supports loading offline hives, recovering deleted keys, and replaying transaction logs. | 
+ | RegRipper | Registry | A command-line tool that parses Windows registry hive files and extracts specific keys/values into readable reports using pre-built Perl plugins, without needing a live Windows system to read them. | 
  | spaCy | Secrets | A Python NLP library you can use to build/customize named-entity recognition to find and label PII in text (names, locations, orgs, IDs) for data discovery, redaction, and DLP workflows. | 
- | TruffleHog | Secrets | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for **high-entropy strings** and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
+ | TruffleHog | Secrets | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | WCE | Secrets | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
  | DCode | Timeline | DCode is a DFIR utility (in the Eric Zimmerman tools) used to decode/convert timestamps (e.g., FILETIME/Unix/various Windows formats) into human-readable dates. | 
  | PECmd | Timeline | PECmd is an Eric Zimmerman DFIR command-line tool that parses Windows Prefetch (`.pf`) files to extract program execution history and timestamps for forensic timeline analysis. | 
@@ -115,9 +117,11 @@ last_edited_time: '2026-08-05 15:06:00.000'
  | Trivy | Vulnerabilities | An open-source vulnerability scanner for containers, container images, and infrastructure-as-code (plus SBOM and secrets scanning), used to catch known CVEs and misconfigurations before deploy. | 
  | Advanced Installer | Windows | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | Windows | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
- | dnSpy | .NET | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
+ | dnSpy | Windows | dnSpy is a debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
+ | EvtxECmd | Windows | **EvtxECmd** is a fast, command-line forensic tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
  | lnkinfo | Windows | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
  | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
  | LOLDrivers | Windows | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
+ | PowerShell ISE | Windows | PowerShell ISE (Integrated Scripting Environment) is a built-in Windows GUI application for writing, editing, and interactively running PowerShell scripts (`.ps1` files) and commands, including executing them line-by-line or in full, with a console pane showing live output. | 
  | wevtutil | Windows | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
 
