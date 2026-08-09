@@ -4,16 +4,18 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-06 20:51:00.000'
+last_edited_time: '2026-08-09 00:55:00.000'
 ---
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
  | ADRecon | Active Directory | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
+ | Kerbrute | Active Directory | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
  | Nltest | Active Directory | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Active Directory | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | ALEAPP | Android | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
  | APK Studio | Android | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
  | BGP Tools | BGP | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
+ | binwalk | Binary | A firmware/binary analysis tool that scans a file for embedded file signatures, headers, and compressed/archived data to identify and extract hidden or nested content. | 
  | Capa | Binary | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
  | CFF Explorer | Binary | Raw dump a resource inside an executable to disk for further analysis. If the dumped resource is a DLL, you can use dnSpy to disassemble it for analysis. | 
  | checksec | Binary | A command-line tool that reports common binary exploit mitigations (e.g., NX, PIE, RELRO, canary) for an executable; example: `checksec --file ./a.out`. | 
@@ -29,8 +31,9 @@ last_edited_time: '2026-08-06 20:51:00.000'
  | nm | Binary | A `binutils` command that lists symbols (functions/variables) from an object file or binary to help with reverse engineering/debugging; example: `nm -C ./a.out | head`. | 
  | Online Solidity Decompiler | Binary | A web-based tool that decompiles EVM bytecode (deployed Ethereum contracts) into a readable, Solidity-like representation for reverse engineering and analysis. | 
  | pe-bear | Binary | A static PE-file inspector/editor that lets you visually parse and navigate a binary's headers, sections, and data directories (imports, exports, TLS, resources, etc.) without executing it. | 
+ | PEdump | Binary | A utility that parses and displays the internal structure of a Windows Portable Executable (PE) file — headers, sections, imports/exports, and resources — for static analysis of an executable. | 
  | Pev | Binary | `pev` is an open-source, cross-platform command-line toolkit for analyzing Windows PE (Portable Executable) files (now renamed/rebranded as the `readp`e project). | 
- | pyinstxtractor | Binary | Extracts embedded .pyc/resources from a PyInstaller-packed .exe for analysis; example: `python pyinstxtractor.py sample.exe`. | 
+ | pyinstxtractor | Binary | Extracts embedded `.pyc`/`resources `from a PyInstaller-packed `.exe` for analysis; example: `python pyinstxtractor.py sample.exe`. | 
  | pylingual | Binary | Python decompiler that turns compiled `.pyc` (often extracted from malware/droppers) back into readable source; example: `pylingual -o out_dir dumped_module.pyc` . | 
  | r2 | Binary | A command-line reverse-engineering framework/disassembler/debugger for analyzing binaries; example: `r2 -A ./a.out`. | 
  | scdbg | Binary | A Windows shellcode analysis tool that emulates/traces shellcode to reveal its behavior (e.g., API calls, decoded strings, and IOCs) without running it on a real host. | 
@@ -90,6 +93,7 @@ last_edited_time: '2026-08-06 20:51:00.000'
  | NetworkMiner | Network | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
  | Snort | Network | Network intrusion detection/prevention systems that analyze traffic for malicious patterns | 
  | Suricata | Network | Network intrusion detection/prevention systems that analyze traffic for malicious patterns. Uses rule syntax compatible with Snort, enabling you to leverage existing community rule sets. | 
+ | SuricataRunner | Network | The launcher/wrapper component that starts and manages the Suricata IDS/IPS engine process (loading its config and rule set, then feeding it packet data — live from an interface or offline from a pcap). | 
  | TCPView | Network | TCPView is a Windows Sysinternals GUI tool that shows, in real time, which processes have which network connections open on a machine. | 
  | UFW | Network | A simple command-line interface for managing the Linux `iptables`/`nftables` firewall (commonly on Ubuntu). | 
  | Zeek | Network | Network analysis framework that logs and understands network behavior. Related to Brim which explores its data. | 
@@ -98,6 +102,7 @@ last_edited_time: '2026-08-06 20:51:00.000'
  | AlienVault OTX | OSINT | A crowd‑sourced threat intelligence platform where security teams and researchers share and consume IOCs (malicious IPs/domains/URLs/file hashes) plus context like rules and writeups, packaged as “pulses.” It’s used to enrich investigations and alerts, automate hunting/blocking via integrations and APIs with SIEM/SOAR/EDR tools, and follow emerging threats from trusted contributors. | 
  | crt.sh | OSINT | A public Certificate Transparency search site used to find certificates (and often subdomains/hostnames) issued for a domain by querying CT logs. | 
  | Shodan | OSINT | Shodan enables security teams to discover internet-facing devices and services across their organization or target scope, identifying vulnerable or misconfigured systems that could be exploited before attackers find them. Shodan is specifically designed to search for Internet-connected devices and systems. | 
+ | WhatWeb | OSINT | A web technology fingerprinting / reconnaissance tool used to identify CMS, frameworks, servers, JS libraries, and other components on a target site. | 
  | UPX | Packing | Used to compress and decompress executable files, reducing their size without affecting functionality. It’s used for packing binaries and can also be used to unpack them for analysis. | 
  | Evilgnix | Phishing | Evilginx2 is an open-source adversary-in-the-middle (AiTM) phishing framework that uses a reverse proxy to capture credentials and session cookies, enabling bypass of MFA in many web login flows. | 
  | GoPhish | Phishing | GoPhish is an open-source phishing simulation and security awareness training platform for creating, sending, and tracking phishing campaigns. | 
@@ -122,6 +127,7 @@ last_edited_time: '2026-08-06 20:51:00.000'
  | lnkinfo | Windows | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
  | LOLBAS | Windows | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
  | LOLDrivers | Windows | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
+ | NetExec (nxc) | Windows | The successor to `crackmapexec `and a multi-protocol (SMB, WinRM, LDAP, MSSQL, RDP, SSH, etc.) post-exploitation and lateral-movement tool for enumerating, authenticating against, and abusing Windows/Active Directory environments. | 
  | PowerShell ISE | Windows | PowerShell ISE (Integrated Scripting Environment) is a built-in Windows GUI application for writing, editing, and interactively running PowerShell scripts (`.ps1` files) and commands, including executing them line-by-line or in full, with a console pane showing live output. | 
  | wevtutil | Windows | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
 
