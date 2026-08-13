@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-09 14:54:00.000'
+last_edited_time: '2026-08-12 14:53:00.000'
 ---
  | **Tool** | **Scope** | **Details** | 
  | ---- | ---- | ---- | 
@@ -16,7 +16,6 @@ last_edited_time: '2026-08-09 14:54:00.000'
  | PingCastle | Active Directory | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | ALEAPP | Android | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
  | APK Studio | Android | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
- | BGP Tools | BGP | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | binwalk | Binary | A firmware/binary analysis tool that scans a file for embedded file signatures, headers, and compressed/archived data to identify and extract hidden or nested content. | 
  | Capa | Binary | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
  | CFF Explorer | Binary | Raw dump a resource inside an executable to disk for further analysis. If the dumped resource is a DLL, you can use dnSpy to disassemble it for analysis. | 
@@ -75,6 +74,7 @@ last_edited_time: '2026-08-09 14:54:00.000'
  | aide | Integrity | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
  | AutoIt Extractor | Malware | Decompiles or extracts scripts and resources from AutoIt-compiled executables. It helps reverse engineers inspect the original AutoIt code or embedded data within compiled `.exe` files. | 
  | chkrootkit | Malware | `chkrootkit `is a Linux command-line tool that scans a system for signs of rootkits by checking common binaries, processes, and known compromise indicators. | 
+ | CMD Watcher | Malware | A lightweight malware-analysis tool that monitors for `cmd.exe` process creation, suspends it, extracts the full command line, and terminates the process. | 
  | FakeNet-NG | Malware | A Windows tool that simulates network services (DNS, HTTP, etc.) on an isolated analysis machine, tricking malware into "phoning home" so you can observe its C2 traffic and behavior without it ever reaching the real internet. | 
  | pe-sieve | Malware | Dump the malware’s process memory, revealing its actual payload by overcoming runtime obfuscation. Run a tool like Process Hacker to identify the process ID to pass to `pe-sieve`. Afterwards, analyze the components dumped using a tool such as Detect It Easy (DIE). | 
  | pestudio | Malware | A Windows PE malware triage tool that statically analyzes executables (imports, strings, sections, headers, indicators) to quickly spot suspicious traits without running the sample. | 
@@ -89,6 +89,7 @@ last_edited_time: '2026-08-09 14:54:00.000'
  | LiMe | Memory | LiME (Linux Memory Extractor) is a kernel module that acquires a live RAM dump from a running Linux system for forensic analysis (typically outputting to a file or over the network). | 
  | MemProcFS | Memory | MemProcFS is a convenient way of viewing physical memory as files in a virtual file system. It's not technically mounting a disk image — it's *synthesizing* a filesystem view from in-memory artifacts. So when you browse it, you're seeing: **Processes** reconstructed from `EPROCESS` linked lists, **Files** pulled from the Windows file cache and memory-mapped regions, **Registry hives** that Windows keeps partially in memory, **Network connections**, handles, DLLs — all from kernel data structures. | 
  | Volatility | Memory | A complete framework for analyzing disk images including memory, process, malware, regions, network, and other indicators from a dump file. | 
+ | BGP Tools | Network | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Brim | Network | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
  | editcap | Network | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
  | netsh | Network | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
