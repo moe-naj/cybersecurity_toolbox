@@ -4,12 +4,13 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-13 18:12:00.000'
+last_edited_time: '2026-08-14 04:11:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
  | **Active Directory** |  | 
  | ADRecon | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
+ | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
  | Coercer | A Python tool that forces a Windows host to authenticate to an attacker-controlled listener by abusing multiple RPC protocols (PetitPotam-style MS-EFSRPC, PrinterBug, etc.), primarily for NTLM/Kerberos relay or hash capture. | 
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
