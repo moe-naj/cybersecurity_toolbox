@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-14 04:11:00.000'
+last_edited_time: '2026-08-15 22:27:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -52,9 +52,11 @@ last_edited_time: '2026-08-14 04:11:00.000'
  | de4js | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
  | MinusOne | MinusOne is an online PowerShell deobfuscator that takes Base64‑encoded UTF‑16 input and outputs a deobfuscated script (submissions are saved to improve the tool). | 
  | **Disk** |  | 
+ | 4n6mount | A modern Rust-based forensic tool that mounts disk images, logical evidence containers (including AD1), archives, and memory dumps as a browsable FUSE filesystem with read-only access, deleted-file recovery, and copy-on-write support. | 
  | Arsenal Image Mounter (AIM) | A Windows forensics tool that mounts disk images (e.g., E01/RAW/VHD/`dd`) as read-only virtual drives so you can analyze them like a live disk. | 
  | Autopsy | Autopsy is an open-source digital forensics platform (built on The Sleuth Kit) used to analyze disk images and file systems to recover artifacts and build a timeline of user/system activity. | 
  | dd | A low-level disk copy/imaging command that reads from a block device/file and writes a bit‑for‑bit output (commonly used to create forensic disk images). | 
+ | DiskDigger | A portable data recovery tool that recovers deleted files from hard drives, USB drives, memory cards, and forensic disk images (e.g. E01) via combined filesystem undelete and free-space carving. | 
  | FTK Imager | FTK Imager is a digital forensics tool used to quickly create forensic disk/memory images and preview/extract files and artifacts without altering the original evidence. AD1 is the `AccessData `FTK logical evidence container format. | 
  | KAPE | KAPE (Kroll Artifact Parser and Extractor) is a DFIR tool that quickly collects key forensic artifacts (and can optionally run parsers on them) from a Windows system or disk image for triage. | 
  | libewf | Open-source library and toolset for reading and writing EnCase Expert Witness Format (`E01`) forensic disk images on Linux. | 
@@ -133,6 +135,7 @@ last_edited_time: '2026-08-14 04:11:00.000'
  | Process Explorer | A Windows system utility that helps you monitor and manage running processes, covering main use cases like: Monitoring & Troubleshooting, Identifying Unknown Processes, Finding Process Dependencies, Killing Unresponsive Programs, Security Investigation, Analyzing Process Relationships, and File Locking Issues. | 
  | **Recovery** |  | 
  | extundelete | A command-line utility that recovers deleted files from ext3/ext4 filesystems by parsing the filesystem's journal and inode metadata to reconstruct files whose data blocks haven't yet been overwritten. | 
+ | rifiuti2 | a command-line forensic tool that analyzes Windows Recycle Bin artifacts (INFO2 and $I/$R files) to extract original path, size, and deletion time of deleted files across Windows 95 through Windows 10/11. | 
  | **Registry** |  | 
  | RECmd | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
  | RegSeek | RegSeek is a Windows registry search and analysis utility used by forensic analysts to quickly locate keys/values/artifacts across live or offline registry hives. | 
@@ -163,5 +166,7 @@ last_edited_time: '2026-08-14 04:11:00.000'
  | LOLDrivers | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
  | NetExec (nxc) | The successor to `crackmapexec `and a multi-protocol (SMB, WinRM, LDAP, MSSQL, RDP, SSH, etc.) post-exploitation and lateral-movement tool for enumerating, authenticating against, and abusing Windows/Active Directory environments. | 
  | PowerShell ISE | PowerShell ISE (Integrated Scripting Environment) is a built-in Windows GUI application for writing, editing, and interactively running PowerShell scripts (`.ps1` files) and commands, including executing them line-by-line or in full, with a console pane showing live output. | 
+ | SBECmd | An Eric Zimmerman’s command-line tool for parsing Windows ShellBags artifacts to reveal folder access history, view preferences, and deleted directory evidence. | 
+ | sccainfo | A command-line tool from the `libscca `library that displays detailed information about Windows Prefetch files | 
  | wevtutil | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
 
