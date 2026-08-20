@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-15 22:27:00.000'
+last_edited_time: '2026-08-19 17:58:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -60,6 +60,7 @@ last_edited_time: '2026-08-15 22:27:00.000'
  | FTK Imager | FTK Imager is a digital forensics tool used to quickly create forensic disk/memory images and preview/extract files and artifacts without altering the original evidence. AD1 is the `AccessData `FTK logical evidence container format. | 
  | KAPE | KAPE (Kroll Artifact Parser and Extractor) is a DFIR tool that quickly collects key forensic artifacts (and can optionally run parsers on them) from a Windows system or disk image for triage. | 
  | libewf | Open-source library and toolset for reading and writing EnCase Expert Witness Format (`E01`) forensic disk images on Linux. | 
+ | mmls | A The Sleuth Kit tool that displays the partition layout (partition table) of a disk image or device. Example: `mmls Horcrux.E01` | 
  | UAC | An incident response and forensic tool for Unix-like systems (Linux, macOS, Solaris, AIX, etc.) that collects artifacts, logs, memory info, running processes, network connections, and more into a structured output directory. | 
  | Velociraptor | An open-source DFIR endpoint monitoring, live response, and forensic investigation platform by Rapid7 that uses a query language called VQL to collect, hunt, and analyze forensic artifacts across endpoints at scale. | 
  | **Document** |  | 
@@ -70,6 +71,7 @@ last_edited_time: '2026-08-15 22:27:00.000'
  | peepdf | Python-based interactive PDF analysis framework that parses object structure, decodes streams, and can extract/analyze embedded JavaScript in one tool. | 
  | **Email** |  | 
  | 4n6 Outlook Forensics Analyzer | 4n6 (Forensiksoft Outlook Forensics) is an email forensics tool used to parse and analyze Outlook mailbox data (PST/OST/MSG) to investigate messages, headers, attachments, and user activity for incidents like phishing/BEC. | 
+ | readpst | A command-line tool that extracts email, attachments, and folders from Microsoft Outlook PST/OST files into standard formats (mbox, etc.). | 
  | Sublime Security | Email security platform focused on detecting and responding to malicious or suspicious email using a detection engine and API-driven workflows (phishing, BEC, malware delivery). | 
  | **Filesystem** |  | 
  | e2fsck | A filesystem consistency-check and repair tool for ext2/ext3/ext4 filesystems that verifies and fixes metadata structures, including replaying a pending journal. | 
@@ -138,6 +140,7 @@ last_edited_time: '2026-08-15 22:27:00.000'
  | rifiuti2 | a command-line forensic tool that analyzes Windows Recycle Bin artifacts (INFO2 and $I/$R files) to extract original path, size, and deletion time of deleted files across Windows 95 through Windows 10/11. | 
  | **Registry** |  | 
  | RECmd | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
+ | reglookup | A command-line tool that parses and extracts keys/values from Windows registry hive files without needing a live Windows system. | 
  | RegSeek | RegSeek is a Windows registry search and analysis utility used by forensic analysts to quickly locate keys/values/artifacts across live or offline registry hives. | 
  | Registry Explorer | A GUI-based forensic registry viewer that supports loading offline hives, recovering deleted keys, and replaying transaction logs. | 
  | RegRipper | A command-line tool that parses Windows registry hive files and extracts specific keys/values into readable reports using pre-built Perl plugins, without needing a live Windows system to read them. | 
