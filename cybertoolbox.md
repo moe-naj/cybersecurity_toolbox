@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-19 17:58:00.000'
+last_edited_time: '2026-08-22 22:35:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -33,6 +33,7 @@ last_edited_time: '2026-08-19 17:58:00.000'
  | IDA Pro | Interactive DisAssembler is a disassembler/decompiler that turns compiled binaries (like the malicious driver or payload here) back into readable assembly or pseudo-C — its main cyber use case is static reverse engineering: figuring out what a piece of malware or an exploit actually does without running it. | 
  | jadx | Dex to Java decompiler. Command line and GUI tools for producing Java source code from Android Dex and APK files. | 
  | JD-GUI | A standalone Windows GUI tool that decompiles Java `.class` files and `.jar` archives back into readable Java source code, letting you inspect the actual logic inside a Java library without needing the original source. | 
+ | ndisasm | The Netwide Disassembler (from the NASM package) that converts raw binary machine code into readable x86/x86-64 assembly. | 
  | nm | A `binutils` command that lists symbols (functions/variables) from an object file or binary to help with reverse engineering/debugging; example: `nm -C ./a.out | head`. | 
  | Online Solidity Decompiler | A web-based tool that decompiles EVM bytecode (deployed Ethereum contracts) into a readable, Solidity-like representation for reverse engineering and analysis. | 
  | pe-bear | A static PE-file inspector/editor that lets you visually parse and navigate a binary's headers, sections, and data directories (imports, exports, TLS, resources, etc.) without executing it. | 
@@ -69,6 +70,7 @@ last_edited_time: '2026-08-19 17:58:00.000'
  | pdfparser | Didier Stevens tool that parses and dumps individual PDF objects/streams (including decompressing and decoding filters) for manual inspection. | 
  | PDFStreamDumper | Windows GUI tool for exploring PDF streams and objects with built-in JavaScript deobfuscation and shellcode analysis features. | 
  | peepdf | Python-based interactive PDF analysis framework that parses object structure, decodes streams, and can extract/analyze embedded JavaScript in one tool. | 
+ | rtfdump.py | A Didier Stevens Python tool that parses and extracts streams, objects, and embedded data from RTF files for malware analysis. | 
  | **Email** |  | 
  | 4n6 Outlook Forensics Analyzer | 4n6 (Forensiksoft Outlook Forensics) is an email forensics tool used to parse and analyze Outlook mailbox data (PST/OST/MSG) to investigate messages, headers, attachments, and user activity for incidents like phishing/BEC. | 
  | readpst | A command-line tool that extracts email, attachments, and folders from Microsoft Outlook PST/OST files into standard formats (mbox, etc.). | 
