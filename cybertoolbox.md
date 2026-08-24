@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-22 22:35:00.000'
+last_edited_time: '2026-08-23 16:48:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -65,12 +65,15 @@ last_edited_time: '2026-08-22 22:35:00.000'
  | UAC | An incident response and forensic tool for Unix-like systems (Linux, macOS, Solaris, AIX, etc.) that collects artifacts, logs, memory info, running processes, network connections, and more into a structured output directory. | 
  | Velociraptor | An open-source DFIR endpoint monitoring, live response, and forensic investigation platform by Rapid7 that uses a query language called VQL to collect, hunt, and analyze forensic artifacts across endpoints at scale. | 
  | **Document** |  | 
+ | msoffcrypto-crack.py | A Python convenience script by Didier Stevens that performs dictionary attacks (using a built-in list or custom wordlists) to recover passwords of encrypted Microsoft Office documents via the msoffcrypto library, optionally decrypting them. | 
+ | msoffcrypto-tool | A Python tool and library for decrypting (and experimentally encrypting) password-protected or otherwise encrypted Microsoft Office files. | 
  | oletools | `oletools` is a Python toolkit for analyzing Microsoft Office documents and OLE files. It includes utilities like `olevba` (extract and deobfuscate VBA macros), `oledump` (inspect OLE streams), `mraptor` (detect suspicious macro patterns), and `oleobj` (extract embedded objects). It is commonly used for **static malware analysis** of malicious Office files. | 
  | pdfid | A quick PDF triage tool (Didier Stevens) that counts suspicious PDF keywords (e.g. `/JavaScript`, `/OpenAction`, `/AcroForm`) to flag a file as worth deeper analysis. | 
  | pdfparser | Didier Stevens tool that parses and dumps individual PDF objects/streams (including decompressing and decoding filters) for manual inspection. | 
  | PDFStreamDumper | Windows GUI tool for exploring PDF streams and objects with built-in JavaScript deobfuscation and shellcode analysis features. | 
  | peepdf | Python-based interactive PDF analysis framework that parses object structure, decodes streams, and can extract/analyze embedded JavaScript in one tool. | 
  | rtfdump.py | A Didier Stevens Python tool that parses and extracts streams, objects, and embedded data from RTF files for malware analysis. | 
+ | XLMMacroDeobfuscator | A Python XLM emulation engine that analyzes and deobfuscates malicious Excel 4.0 (XLM) macros in XLS/XLSM/XLSB files without fully executing the code. | 
  | **Email** |  | 
  | 4n6 Outlook Forensics Analyzer | 4n6 (Forensiksoft Outlook Forensics) is an email forensics tool used to parse and analyze Outlook mailbox data (PST/OST/MSG) to investigate messages, headers, attachments, and user activity for incidents like phishing/BEC. | 
  | readpst | A command-line tool that extracts email, attachments, and folders from Microsoft Outlook PST/OST files into standard formats (mbox, etc.). | 
