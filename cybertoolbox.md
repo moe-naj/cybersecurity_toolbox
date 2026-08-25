@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-23 16:48:00.000'
+last_edited_time: '2026-08-24 15:15:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -168,6 +168,7 @@ last_edited_time: '2026-08-23 16:48:00.000'
  | attrib | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
  | dnSpy | A debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | EvtxECmd | A tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
+ | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
  | JLECmd | An Eric Zimmerman’s command-line tool that parses Windows Jump List files (`AutomaticDestinations `and `CustomDestinations`) into readable CSV/JSON output. | 
  | lnkinfo | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
  | LOLBAS | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
