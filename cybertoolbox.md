@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-24 15:15:00.000'
+last_edited_time: '2026-08-26 14:45:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -122,6 +122,7 @@ last_edited_time: '2026-08-24 15:15:00.000'
  | editcap | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
  | NetworkMiner | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
+ | SIPVicious | An open-source suite of security tools for auditing SIP-based VoIP systems (scanning servers, enumerating extensions, and cracking passwords). | 
  | Snort | Network intrusion detection/prevention systems that analyze traffic for malicious patterns | 
  | Suricata | Network intrusion detection/prevention systems that analyze traffic for malicious patterns. Uses rule syntax compatible with Snort, enabling you to leverage existing community rule sets. | 
  | SuricataRunner | The launcher/wrapper component that starts and manages the Suricata IDS/IPS engine process (loading its config and rule set, then feeding it packet data — live from an interface or offline from a pcap). | 
