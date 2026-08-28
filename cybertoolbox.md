@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-26 14:45:00.000'
+last_edited_time: '2026-08-27 18:16:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -120,6 +120,7 @@ last_edited_time: '2026-08-26 14:45:00.000'
  | BGP Tools | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Brim | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
  | editcap | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
+ | IPinfo.io | An IP intelligence/geolocation provider that returns location, ASN, org, and related data for any address; quick curl lookup: `curl ipinfo.io` (your public IP) or `curl ipinfo.io/8.8.8.8`. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
  | NetworkMiner | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
  | SIPVicious | An open-source suite of security tools for auditing SIP-based VoIP systems (scanning servers, enumerating extensions, and cracking passwords). | 
@@ -143,6 +144,7 @@ last_edited_time: '2026-08-26 14:45:00.000'
  | Process Explorer | A Windows system utility that helps you monitor and manage running processes, covering main use cases like: Monitoring & Troubleshooting, Identifying Unknown Processes, Finding Process Dependencies, Killing Unresponsive Programs, Security Investigation, Analyzing Process Relationships, and File Locking Issues. | 
  | **Recovery** |  | 
  | extundelete | A command-line utility that recovers deleted files from ext3/ext4 filesystems by parsing the filesystem's journal and inode metadata to reconstruct files whose data blocks haven't yet been overwritten. | 
+ | foremost | A forensic carver that scans a disk image or pcap/blob for file headers/footers and dumps recovered files by type (JPEG, ZIP, EXE, etc.) without a filesystem. | 
  | rifiuti2 | a command-line forensic tool that analyzes Windows Recycle Bin artifacts (INFO2 and $I/$R files) to extract original path, size, and deletion time of deleted files across Windows 95 through Windows 10/11. | 
  | **Registry** |  | 
  | RECmd | An Eric Zimmerman command-line tool that parses Windows Registry hive files and exports forensic artifacts (often to CSV/JSON) for quick triage.⁠⁠ Example: `RECmd.exe -d "config" --bn "Kroll_Batch.reb" --csv "C:\Users\Administrator\Desktop"` using this batch file (`.reb`) for broadest registry coverage. | 
