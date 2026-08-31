@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-27 18:16:00.000'
+last_edited_time: '2026-08-30 15:40:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -74,6 +74,7 @@ last_edited_time: '2026-08-27 18:16:00.000'
  | peepdf | Python-based interactive PDF analysis framework that parses object structure, decodes streams, and can extract/analyze embedded JavaScript in one tool. | 
  | rtfdump.py | A Didier Stevens Python tool that parses and extracts streams, objects, and embedded data from RTF files for malware analysis. | 
  | XLMMacroDeobfuscator | A Python XLM emulation engine that analyzes and deobfuscates malicious Excel 4.0 (XLM) macros in XLS/XLSM/XLSB files without fully executing the code. | 
+ | xls2csv | A utility (commonly from the `catdoc `or `libxls `packages) that reads a Microsoft Excel `.xls` spreadsheet and writes its cell data as comma-separated values (CSV) to standard output. | 
  | **Email** |  | 
  | 4n6 Outlook Forensics Analyzer | 4n6 (Forensiksoft Outlook Forensics) is an email forensics tool used to parse and analyze Outlook mailbox data (PST/OST/MSG) to investigate messages, headers, attachments, and user activity for incidents like phishing/BEC. | 
  | readpst | A command-line tool that extracts email, attachments, and folders from Microsoft Outlook PST/OST files into standard formats (mbox, etc.). | 
