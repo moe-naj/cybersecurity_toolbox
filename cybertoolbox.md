@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-08-30 15:40:00.000'
+last_edited_time: '2026-09-01 15:06:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -16,9 +16,6 @@ last_edited_time: '2026-08-30 15:40:00.000'
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
- | **Android** |  | 
- | ALEAPP | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
- | APK Studio | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
  | **Binary** |  | 
  | binwalk | A firmware/binary analysis tool that scans a file for embedded file signatures, headers, and compressed/archived data to identify and extract hidden or nested content. | 
  | Capa | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
@@ -117,6 +114,10 @@ last_edited_time: '2026-08-30 15:40:00.000'
  | LiMe | LiME (Linux Memory Extractor) is a kernel module that acquires a live RAM dump from a running Linux system for forensic analysis (typically outputting to a file or over the network). | 
  | MemProcFS | MemProcFS is a convenient way of viewing physical memory as files in a virtual file system. It's not technically mounting a disk image — it's *synthesizing* a filesystem view from in-memory artifacts. So when you browse it, you're seeing: **Processes** reconstructed from `EPROCESS` linked lists, **Files** pulled from the Windows file cache and memory-mapped regions, **Registry hives** that Windows keeps partially in memory, **Network connections**, handles, DLLs — all from kernel data structures. | 
  | Volatility | A complete framework for analyzing disk images including memory, process, malware, regions, network, and other indicators from a dump file. | 
+ | **Mobile** |  | 
+ | ALEAPP | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
+ | APK Studio | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
+ | mac_apt | A Python forensic parser that extracts and normalizes known macOS/iOS artifact databases (KnowledgeC, Safari history, calendar, notes, etc.) into readable output, so you don't hand-parse their schemas yourself. | 
  | **Network** |  | 
  | BGP Tools | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Brim | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
