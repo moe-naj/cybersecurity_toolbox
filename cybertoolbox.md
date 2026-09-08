@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-01 15:06:00.000'
+last_edited_time: '2026-09-07 17:38:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -55,7 +55,7 @@ last_edited_time: '2026-09-01 15:06:00.000'
  | Autopsy | Autopsy is an open-source digital forensics platform (built on The Sleuth Kit) used to analyze disk images and file systems to recover artifacts and build a timeline of user/system activity. | 
  | dd | A low-level disk copy/imaging command that reads from a block device/file and writes a bit‑for‑bit output (commonly used to create forensic disk images). | 
  | DiskDigger | A portable data recovery tool that recovers deleted files from hard drives, USB drives, memory cards, and forensic disk images (e.g. E01) via combined filesystem undelete and free-space carving. | 
- | FTK Imager | FTK Imager is a digital forensics tool used to quickly create forensic disk/memory images and preview/extract files and artifacts without altering the original evidence. AD1 is the `AccessData `FTK logical evidence container format. | 
+ | FTK Imager | A digital forensics tool used to quickly create forensic disk/memory images and preview/extract files and artifacts without altering the original evidence. It can also recover "soft-deleted" NTFS files directly from its evidence tree — files whose MFT record has been deallocated but whose record slot and data clusters haven't yet been overwritten — by resolving the record's still-valid data runs. AD1 is the AccessData FTK logical evidence container format. | 
  | KAPE | KAPE (Kroll Artifact Parser and Extractor) is a DFIR tool that quickly collects key forensic artifacts (and can optionally run parsers on them) from a Windows system or disk image for triage. | 
  | libewf | Open-source library and toolset for reading and writing EnCase Expert Witness Format (`E01`) forensic disk images on Linux. | 
  | mmls | A The Sleuth Kit tool that displays the partition layout (partition table) of a disk image or device. Example: `mmls Horcrux.E01` | 
