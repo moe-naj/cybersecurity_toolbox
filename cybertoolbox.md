@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-08 15:50:00.000'
+last_edited_time: '2026-09-09 20:12:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -64,6 +64,7 @@ last_edited_time: '2026-09-08 15:50:00.000'
  | **Document** |  | 
  | msoffcrypto-crack.py | A Python convenience script by Didier Stevens that performs dictionary attacks (using a built-in list or custom wordlists) to recover passwords of encrypted Microsoft Office documents via the msoffcrypto library, optionally decrypting them. | 
  | msoffcrypto-tool | A Python tool and library for decrypting (and experimentally encrypting) password-protected or otherwise encrypted Microsoft Office files. | 
+ | odt2txt | A utility that extracts and prints the plain-text content from an OpenDocument Text (.odt) file by parsing its embedded content.xml. | 
  | oletools | `oletools` is a Python toolkit for analyzing Microsoft Office documents and OLE files. It includes utilities like `olevba` (extract and deobfuscate VBA macros), `oledump` (inspect OLE streams), `mraptor` (detect suspicious macro patterns), and `oleobj` (extract embedded objects). It is commonly used for **static malware analysis** of malicious Office files. | 
  | pdfid | A quick PDF triage tool (Didier Stevens) that counts suspicious PDF keywords (e.g. `/JavaScript`, `/OpenAction`, `/AcroForm`) to flag a file as worth deeper analysis. | 
  | pdfparser | Didier Stevens tool that parses and dumps individual PDF objects/streams (including decompressing and decoding filters) for manual inspection. | 
