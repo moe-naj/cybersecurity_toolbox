@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-09 20:12:00.000'
+last_edited_time: '2026-09-13 16:08:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -46,8 +46,9 @@ last_edited_time: '2026-09-09 20:12:00.000'
  | TrailInspector | A utility for parsing and investigating AWS CloudTrail audit logs to reconstruct and analyze suspicious cloud API activity. | 
  | **Database** |  | 
  | DB Browser for SQLite | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
- | **Deobfuscation** |  | 
+ | **Data Transformation** |  | 
  | de4js | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
+ | iconv | A Linux command-line tool that converts text from one character encoding (like UTF-16LE) to another (like UTF-8). | 
  | MinusOne | MinusOne is an online PowerShell deobfuscator that takes Base64‑encoded UTF‑16 input and outputs a deobfuscated script (submissions are saved to improve the tool). | 
  | **Disk** |  | 
  | 4n6mount | A modern Rust-based forensic tool that mounts disk images, logical evidence containers (including AD1), archives, and memory dumps as a browsable FUSE filesystem with read-only access, deleted-file recovery, and copy-on-write support. | 
