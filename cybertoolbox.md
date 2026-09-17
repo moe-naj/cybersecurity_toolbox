@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-13 16:08:00.000'
+last_edited_time: '2026-09-16 17:17:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -188,4 +188,5 @@ last_edited_time: '2026-09-13 16:08:00.000'
  | SBECmd | An Eric Zimmerman’s command-line tool for parsing Windows ShellBags artifacts to reveal folder access history, view preferences, and deleted directory evidence. | 
  | sccainfo | A command-line tool from the `libscca `library that displays detailed information about Windows Prefetch files | 
  | wevtutil | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
+ | wmiexec.py | An Impacket tool that gets a semi-interactive remote shell on a Windows host by using WMI (Win32_Process.Create) to launch commands and redirecting their output to a randomly-named file under the target's ADMIN$ share, which it then reads back and deletes — all without dropping any binary or service on the target. | 
 
