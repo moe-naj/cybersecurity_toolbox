@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-16 17:17:00.000'
+last_edited_time: '2026-09-18 00:31:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -176,6 +176,7 @@ last_edited_time: '2026-09-16 17:17:00.000'
  | **Windows** |  | 
  | Advanced Installer | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
+ | Cygwin | A Windows port of a Unix-like environment: a POSIX compatibility DLL plus a collection of GNU/Linux tools (bash, grep, gcc, etc.) that run on Windows without a VM. | 
  | dnSpy | A debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | EvtxECmd | A tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
  | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
