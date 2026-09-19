@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-18 00:31:00.000'
+last_edited_time: '2026-09-18 23:52:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -46,6 +46,7 @@ last_edited_time: '2026-09-18 00:31:00.000'
  | TrailInspector | A utility for parsing and investigating AWS CloudTrail audit logs to reconstruct and analyze suspicious cloud API activity. | 
  | **Database** |  | 
  | DB Browser for SQLite | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
+ | esedbinfo | A command-line tool from the libesedb-utils package that prints an ESE database file's metadata (page size, version, table list, creation info) without exporting or querying any actual row data, useful as a quick sanity/identification check before diving into esedbexport or scripted parsing. | 
  | **Data Transformation** |  | 
  | de4js | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
  | iconv | A Linux command-line tool that converts text from one character encoding (like UTF-16LE) to another (like UTF-8). | 
@@ -188,6 +189,8 @@ last_edited_time: '2026-09-18 00:31:00.000'
  | PowerShell ISE | PowerShell ISE (Integrated Scripting Environment) is a built-in Windows GUI application for writing, editing, and interactively running PowerShell scripts (`.ps1` files) and commands, including executing them line-by-line or in full, with a console pane showing live output. | 
  | SBECmd | An Eric Zimmerman’s command-line tool for parsing Windows ShellBags artifacts to reveal folder access history, view preferences, and deleted directory evidence. | 
  | sccainfo | A command-line tool from the `libscca `library that displays detailed information about Windows Prefetch files | 
+ | SIDR | Search Index DB Reporter is a Rust-based, open-source tool by Stroz Friedberg that parses Windows's `Windows.edb`/`Windows.db` search-index databases and extracts their cached file metadata and indexed document-content previews into JSON/CSV reports. | 
+ | SrumECmd | An Eric Zimmerman CLI tool that parses a Windows SRUDB.dat (SRUM) ESE database offline and exports its tables (including Application Resource Usage and Network Usage, with all IDs resolved to real app paths/SIDs) to readable CSV files. | 
  | wevtutil | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
  | wmiexec.py | An Impacket tool that gets a semi-interactive remote shell on a Windows host by using WMI (Win32_Process.Create) to launch commands and redirecting their output to a randomly-named file under the target's ADMIN$ share, which it then reads back and deletes — all without dropping any binary or service on the target. | 
 
