@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-20 17:20:00.000'
+last_edited_time: '2026-09-28 15:59:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -182,6 +182,7 @@ last_edited_time: '2026-09-20 17:20:00.000'
  | Cygwin | A Windows port of a Unix-like environment: a POSIX compatibility DLL plus a collection of GNU/Linux tools (bash, grep, gcc, etc.) that run on Windows without a VM. | 
  | dnSpy | A debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | EvtxECmd | A tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
+ | GodPotato-NET4.exe | The .NET Framework 4 build of GodPotato. It is a public Potato-family privilege escalation tool that abuses `SeImpersonatePrivilege `by coercing the DCOM/RPC service (`rpcss`) to authenticate to it, then uses the captured `SYSTEM `token to run a command as `NT AUTHORITY\SYSTEM`. | 
  | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
  | JLECmd | An Eric Zimmerman’s command-line tool that parses Windows Jump List files (`AutomaticDestinations `and `CustomDestinations`) into readable CSV/JSON output. | 
  | lnkinfo | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
