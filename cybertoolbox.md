@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-09-28 15:59:00.000'
+last_edited_time: '2026-10-05 15:36:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -95,6 +95,9 @@ last_edited_time: '2026-09-28 15:59:00.000'
  | sed | Edit and transform text: `sed 's/foo/bar/g' file.txt` | 
  | sort | Reorder lines in lexicographic, key-based, or numeric order for organization or preparation for deduplication: `sort -u hosts.txt` | 
  | uniq | Collapse and count adjacent duplicate lines, often after `sort`: `sort file.txt | uniq -c` | 
+ | **Linux** |  | 
+ | ausearch | Queries and interprets Linux audit daemon logs (`auditd`), decoding hex-encoded command arguments and resolving UIDs to account names when run with `-i` (or reading an offline log file with `-if`). | 
+ | utmpdump | Parses the binary login-session databases (`wtmp`/`btmp`/`lastlog`), which are fixed-size C struct arrays that `cat`/`strings `can't render correctly. | 
  | **LLM** |  | 
  | garak | An open-source vulnerability scanner for LLMs that probes models for weaknesses like prompt injection, jailbreaks, data leakage, and other failure modes using automated adversarial test suites. | 
  | LLMmap | A fingerprinting technique that identifies which specific LLM (and version) is powering a black-box application by sending crafted probe queries and analyzing response patterns to match against known model signatures. | 
