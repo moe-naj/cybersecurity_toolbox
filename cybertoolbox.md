@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-05 15:36:00.000'
+last_edited_time: '2026-10-06 15:38:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -38,6 +38,7 @@ last_edited_time: '2026-10-05 15:36:00.000'
  | pyinstxtractor | Extracts embedded `.pyc`/`resources `from a PyInstaller-packed `.exe` for analysis; example: `python pyinstxtractor.py sample.exe`. | 
  | pylingual | Python decompiler that turns compiled `.pyc` (often extracted from malware/droppers) back into readable source; example: `pylingual -o out_dir dumped_module.pyc` . | 
  | r2 | A command-line reverse-engineering framework/disassembler/debugger for analyzing binaries; example: `r2 -A ./a.out`. | 
+ | rasm2 | A `radare2`’s command-line assembler and disassembler for many architectures, including x86, ARM, and BPF. | 
  | scdbg | A Windows shellcode analysis tool that emulates/traces shellcode to reveal its behavior (e.g., API calls, decoded strings, and IOCs) without running it on a real host. | 
  | UPX | Used to compress and decompress executable files, reducing their size without affecting functionality. It’s used for packing binaries and can also be used to unpack them for analysis. | 
  | **Cloud** |  | 
