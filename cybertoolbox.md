@@ -4,11 +4,12 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-11 23:28:00.000'
+last_edited_time: '2026-10-12 22:40:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
  | **Active Directory** |  | 
+ | adPEAS | `adPEAS.ps1` is a PowerShell-based Active Directory enumeration script (inspired by the *PEAS (`winPEAS`/`linPEAS`) family of privilege-escalation-enumeration tools) that automates recon of an AD domain — pulling domain/forest info, trusts, users, groups, GPOs, ACLs, Kerberoastable accounts, and misconfigurations — in one pass, often used to quickly surface privilege-escalation paths during or after a compromise. | 
  | ADRecon | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
  | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
@@ -175,6 +176,7 @@ last_edited_time: '2026-10-11 23:28:00.000'
  | WCE | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
  | **Timeline** |  | 
  | DCode | DCode is a DFIR utility (in the Eric Zimmerman tools) used to decode/convert timestamps (e.g., FILETIME/Unix/various Windows formats) into human-readable dates. | 
+ | Hindsight | A browser-forensics tool by Ryan Benson that parses artifacts from Chromium-based browsers (Chrome, Edge, Brave, Opera) and builds a unified, searchable timeline of web activity such as history, downloads, cookies, cache, autofill, and local storage. | 
  | PECmd | PECmd is an Eric Zimmerman DFIR command-line tool that parses Windows Prefetch (`.pf`) files to extract program execution history and timestamps for forensic timeline analysis. | 
  | Plaso Framework | Plaso is a digital forensics timeline framework that extracts timestamps from many artifact types via parsers and normalizes them into a single "super timeline" for analysis. | 
  | Timeline Explorer | A tool to view CSV and Excel files with easy filtering, grouping, and sorting — the typical workflow is to first use EvtxECmd to parse all Windows event logs into one CSV, then load that CSV into Timeline Explorer for filtering and viewing. | 
