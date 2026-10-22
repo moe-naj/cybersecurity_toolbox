@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-16 01:45:00.000'
+last_edited_time: '2026-10-22 14:36:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -175,6 +175,8 @@ last_edited_time: '2026-10-16 01:45:00.000'
  | TruffleHog | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | unshadow | Merges `/etc/passwd` and `/etc/shadow` into a single file combining each user's account info with their password hash, producing the format John the Ripper expects as input for offline password cracking. | 
  | WCE | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
+ | Specific Technologies |  | 
+ | WPScan | A free command-line vulnerability scanner for WordPress sites that enumerates the core version, plugins, themes, and users, and checks them against a database of known vulnerabilities. | 
  | **Timeline** |  | 
  | DCode | DCode is a DFIR utility (in the Eric Zimmerman tools) used to decode/convert timestamps (e.g., FILETIME/Unix/various Windows formats) into human-readable dates. | 
  | Hindsight | A browser-forensics tool by Ryan Benson that parses artifacts from Chromium-based browsers (Chrome, Edge, Brave, Opera) and builds a unified, searchable timeline of web activity such as history, downloads, cookies, cache, autofill, and local storage. | 
