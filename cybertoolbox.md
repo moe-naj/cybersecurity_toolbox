@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-22 14:47:00.000'
+last_edited_time: '2026-10-23 18:49:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -75,6 +75,7 @@ last_edited_time: '2026-10-22 14:47:00.000'
  | pdfid | A quick PDF triage tool (Didier Stevens) that counts suspicious PDF keywords (e.g. `/JavaScript`, `/OpenAction`, `/AcroForm`) to flag a file as worth deeper analysis. | 
  | pdfparser | Didier Stevens tool that parses and dumps individual PDF objects/streams (including decompressing and decoding filters) for manual inspection. | 
  | PDFStreamDumper | Windows GUI tool for exploring PDF streams and objects with built-in JavaScript deobfuscation and shellcode analysis features. | 
+ | PDFwalker | A GUI tool (built on the Origami Ruby framework) for visually exploring a PDF's internal object structure — Catalog, streams, JavaScript, embedded files — without manually parsing raw obj/endobj blocks in a hex or text editor. | 
  | peepdf | Python-based interactive PDF analysis framework that parses object structure, decodes streams, and can extract/analyze embedded JavaScript in one tool. | 
  | rtfdump.py | A Didier Stevens Python tool that parses and extracts streams, objects, and embedded data from RTF files for malware analysis. | 
  | XLMMacroDeobfuscator | A Python XLM emulation engine that analyzes and deobfuscates malicious Excel 4.0 (XLM) macros in XLS/XLSM/XLSB files without fully executing the code. | 
