@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-23 18:49:00.000'
+last_edited_time: '2026-10-25 01:20:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -172,6 +172,7 @@ last_edited_time: '2026-10-23 18:49:00.000'
  | **Secrets** |  | 
  | JDumpSpider | A Java tool that parses a JVM heap dump file and automatically extracts known sensitive values (datasource credentials, config properties, Redis/Shiro keys) by walking the object graph for recognized class types, instead of manually grepping raw strings. | 
  | john | An offline password-cracking tool that takes hashed credentials and attempts to recover the original plaintext by testing candidate passwords via wordlists, rules, or brute-force. | 
+ | jwt_tool | A Python command-line tool for testing and attacking JSON Web Tokens — decoding, tampering with claims, cracking weak HS256 secrets, and probing for common JWT vulnerabilities (alg confusion, `alg:none`, signature stripping). | 
  | spaCy | A Python NLP library you can use to build/customize named-entity recognition to find and label PII in text (names, locations, orgs, IDs) for data discovery, redaction, and DLP workflows. | 
  | TruffleHog | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | unshadow | Merges `/etc/passwd` and `/etc/shadow` into a single file combining each user's account info with their password hash, producing the format John the Ripper expects as input for offline password cracking. | 
