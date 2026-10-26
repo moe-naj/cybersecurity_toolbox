@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-25 01:20:00.000'
+last_edited_time: '2026-10-26 02:46:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -49,7 +49,7 @@ last_edited_time: '2026-10-25 01:20:00.000'
  | bkcrack | A tool that implements the Biham-Kochanski known-plaintext attack to recover the internal decryption keys of a legacy ZipCrypto-encrypted archive, bypassing the need to know or crack the actual password. | 
  | **Database** |  | 
  | DB Browser for SQLite | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
- | esedbinfo | A command-line tool from the libesedb-utils package that prints an ESE database file's metadata (page size, version, table list, creation info) without exporting or querying any actual row data, useful as a quick sanity/identification check before diving into esedbexport or scripted parsing. | 
+ | esedbinfo | A command-line tool from the `libesedb-utils` package that prints an ESE database file's metadata (page size, version, table list, creation info) without exporting or querying any actual row data, useful as a quick sanity/identification check before diving into `esedbexport `or scripted parsing. | 
  | **Data Transformation** |  | 
  | de4js | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
  | iconv | A Linux command-line tool that converts text from one character encoding (like UTF-16LE) to another (like UTF-8). | 
@@ -64,6 +64,7 @@ last_edited_time: '2026-10-25 01:20:00.000'
  | genisoimage | A  utility that packages a folder of files into a single ISO 9660 disk-image file, which you can then mount as a virtual CD/DVD. | 
  | KAPE | KAPE (Kroll Artifact Parser and Extractor) is a DFIR tool that quickly collects key forensic artifacts (and can optionally run parsers on them) from a Windows system or disk image for triage. | 
  | libewf | Open-source library and toolset for reading and writing EnCase Expert Witness Format (`E01`) forensic disk images on Linux. | 
+ | mft_dump | A fast Rust CLI tool that parses a Windows NTFS `$MFT` file and exports its entries (filenames, timestamps, flags, etc.) to JSON, CSV, or JSONL. | 
  | mmls | A The Sleuth Kit tool that displays the partition layout (partition table) of a disk image or device. Example: `mmls Horcrux.E01` | 
  | UAC | An incident response and forensic tool for Unix-like systems (Linux, macOS, Solaris, AIX, etc.) that collects artifacts, logs, memory info, running processes, network connections, and more into a structured output directory. | 
  | Velociraptor | An open-source DFIR endpoint monitoring, live response, and forensic investigation platform by Rapid7 that uses a query language called VQL to collect, hunt, and analyze forensic artifacts across endpoints at scale. | 
