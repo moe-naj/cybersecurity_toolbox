@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-26 02:46:00.000'
+last_edited_time: '2026-10-26 03:07:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -194,6 +194,7 @@ last_edited_time: '2026-10-26 02:46:00.000'
  | attrib | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
  | Cygwin | A Windows port of a Unix-like environment: a POSIX compatibility DLL plus a collection of GNU/Linux tools (bash, grep, gcc, etc.) that run on Windows without a VM. | 
  | dnSpy | A debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
+ | evtx_dump | A fast Rust CLI tool that parses Windows Event Log (.evtx) files and outputs their records as XML (or JSON). | 
  | EvtxECmd | A tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
  | GodPotato-NET4.exe | The .NET Framework 4 build of GodPotato. It is a public Potato-family privilege escalation tool that abuses `SeImpersonatePrivilege `by coercing the DCOM/RPC service (`rpcss`) to authenticate to it, then uses the captured `SYSTEM `token to run a command as `NT AUTHORITY\SYSTEM`. | 
  | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
