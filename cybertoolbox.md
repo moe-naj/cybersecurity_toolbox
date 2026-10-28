@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-26 03:07:00.000'
+last_edited_time: '2026-10-27 15:26:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -137,6 +137,8 @@ last_edited_time: '2026-10-26 03:07:00.000'
  | **Network** |  | 
  | BGP Tools | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Brim | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
+ | chisel | A TCP/UDP tunneling tool that creates a fast, encrypted tunnel over HTTP, commonly used for pivoting and port forwarding. | 
+ | dnscat2 | A DNS tunneling tool that creates an encrypted command-and-control channel over DNS queries and responses. | 
  | editcap | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
  | IPinfo.io | An IP intelligence/geolocation provider that returns location, ASN, org, and related data for any address; quick curl lookup: `curl ipinfo.io` (your public IP) or `curl ipinfo.io/8.8.8.8`. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
