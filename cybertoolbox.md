@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-27 15:26:00.000'
+last_edited_time: '2026-10-29 01:28:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -101,6 +101,7 @@ last_edited_time: '2026-10-27 15:26:00.000'
  | uniq | Collapse and count adjacent duplicate lines, often after `sort`: `sort file.txt | uniq -c` | 
  | **Linux** |  | 
  | ausearch | Queries and interprets Linux audit daemon logs (`auditd`), decoding hex-encoded command arguments and resolving UIDs to account names when run with `-i` (or reading an offline log file with `-if`). | 
+ | GTFOBins | A curated list of Unix binaries that can be abused to bypass local security restrictions (shell access, file read/write, privesc) when misconfigured with sudo, SUID, or Linux capabilities. [https://gtfobins.org/](https://gtfobins.org/) | 
  | journalctl | The command-line tool for querying and viewing logs collected by `systemd-journald`, Linux's system logging service (covers kernel, boot, and service/unit logs in one structured, timestamped store). | 
  | utmpdump | Parses the binary login-session databases (`wtmp`/`btmp`/`lastlog`), which are fixed-size C struct arrays that `cat`/`strings `can't render correctly. | 
  | **LLM** |  | 
