@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-29 01:28:00.000'
+last_edited_time: '2026-10-29 17:10:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -134,8 +134,9 @@ last_edited_time: '2026-10-29 01:28:00.000'
  | **Mobile** |  | 
  | ALEAPP | Android Logs Events And Protobuf Parser (ALEAPP) is a forensic tool that extracts, parses, and presents Android system logs, events, and protobuf-encoded data to help investigators analyze user activity and system artifacts. | 
  | APK Studio | A GUI front-end for `apktool `that lets you decompile an APK to Smali/resources, edit it, and rebuild/resign it — read/write, unlike JADX's read-only decompilation. | 
- | mac_apt | A Python forensic parser that extracts and normalizes known macOS/iOS artifact databases (KnowledgeC, Safari history, calendar, notes, etc.) into readable output, so you don't hand-parse their schemas yourself. | 
+ | mac_apt | A Python forensic parser that extracts and normalizes known macOS/iOS artifact databases (`KnowledgeC`, Safari history, calendar, notes, etc.) into readable output, so you don't hand-parse their schemas yourself. | 
  | **Network** |  | 
+ | Apackets | [Apackets.com](http://apackets.com/) is an online pcap-sharing/analysis platform where users can upload, browse, and inspect packet capture files via a web interface rather than a local tool. | 
  | BGP Tools | The service [bgp.tools](http://bgp.tools/) is used to query BGP routing data directly when WHOIS databases are slow, incomplete, or when you need to trace actual routing paths and find the real ASN announcing a prefix in a specific region, especially for identifying infrastructure that's being proxied or routed through different RIRs than expected. | 
  | Brim | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
  | chisel | A TCP/UDP tunneling tool that creates a fast, encrypted tunnel over HTTP, commonly used for pivoting and port forwarding. | 
