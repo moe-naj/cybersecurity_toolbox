@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-10-29 17:10:00.000'
+last_edited_time: '2026-11-06 01:39:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -47,6 +47,7 @@ last_edited_time: '2026-10-29 17:10:00.000'
  | TrailInspector | A utility for parsing and investigating AWS CloudTrail audit logs to reconstruct and analyze suspicious cloud API activity. | 
  | **Cryptography** |  | 
  | bkcrack | A tool that implements the Biham-Kochanski known-plaintext attack to recover the internal decryption keys of a legacy ZipCrypto-encrypted archive, bypassing the need to know or crack the actual password. | 
+ | openssl | A command-line toolkit for TLS/SSL and cryptography, commonly used to inspect/debug certificates and server handshakes, generate keys and CSRs, encrypt/decrypt/hash data, and manually connect to TLS services (`s_client`) when tools like `curl `refuse an old protocol. | 
  | **Database** |  | 
  | DB Browser for SQLite | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
  | esedbinfo | A command-line tool from the `libesedb-utils` package that prints an ESE database file's metadata (page size, version, table list, creation info) without exporting or querying any actual row data, useful as a quick sanity/identification check before diving into `esedbexport `or scripted parsing. | 
