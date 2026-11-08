@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-06 01:39:00.000'
+last_edited_time: '2026-11-08 03:03:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -51,6 +51,8 @@ last_edited_time: '2026-11-06 01:39:00.000'
  | **Database** |  | 
  | DB Browser for SQLite | DB Browser for SQLite is a lightweight GUI tool DFIR analysts use to open and query SQLite databases (common in app/browser artifacts) to quickly inspect tables, run SQL, and extract evidence. | 
  | esedbinfo | A command-line tool from the `libesedb-utils` package that prints an ESE database file's metadata (page size, version, table list, creation info) without exporting or querying any actual row data, useful as a quick sanity/identification check before diving into `esedbexport `or scripted parsing. | 
+ | Get-MSSQLCredentialPasswords | A NetSPI-published PowerShell module that, given SQL Server sysadmin rights on a host, extracts and decrypts stored `CREATE CREDENTIAL` secrets by pulling the encrypted blob from `sys.sysobjvalues` (via DAC) and the Service Master Key from `sys.key_encryptions`, then unwrapping both through Windows DPAPI to recover the plaintext password. | 
+ | PowerUpSQL | `PowerUpSQL.ps1` is a PowerShell module purpose-built for SQL Server privilege escalation and security auditing — it automates discovery, enumeration, and exploitation of misconfigurations like impersonation chains, linked-server credential theft, and (relevant here) decrypting stored credential secrets via the Service Master Key. | 
  | **Data Transformation** |  | 
  | de4js | A browser-based JavaScript deobfuscator/beautifier used to unpack obfuscated JS extracted from a malicious PDF. | 
  | iconv | A Linux command-line tool that converts text from one character encoding (like UTF-16LE) to another (like UTF-8). | 
