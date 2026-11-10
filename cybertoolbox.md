@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-08 03:03:00.000'
+last_edited_time: '2026-11-09 18:47:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -110,8 +110,6 @@ last_edited_time: '2026-11-08 03:03:00.000'
  | **LLM** |  | 
  | garak | An open-source vulnerability scanner for LLMs that probes models for weaknesses like prompt injection, jailbreaks, data leakage, and other failure modes using automated adversarial test suites. | 
  | LLMmap | A fingerprinting technique that identifies which specific LLM (and version) is powering a black-box application by sending crafted probe queries and analyzing response patterns to match against known model signatures. | 
- | **Integrity** |  | 
- | aide | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
  | **macOS** |  | 
  | plistlib | Python's standard-library module for reading and writing Apple property list (`.plist`) files, both XML and binary formats. | 
  | plutil | macOS's command-line tool for reading/converting/validating Property List (`.plist`) files — Apple's XML/binary key-value config format. | 
@@ -185,6 +183,9 @@ last_edited_time: '2026-11-08 03:03:00.000'
  | TruffleHog | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | unshadow | Merges `/etc/passwd` and `/etc/shadow` into a single file combining each user's account info with their password hash, producing the format John the Ripper expects as input for offline password cracking. | 
  | WCE | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
+ | Security Tooling |  | 
+ | aide | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
+ | Falco  | An open-source, eBPF-based runtime security tool that detects abnormal behavior by monitoring kernel syscalls across hosts, containers, and Kubernetes in real time. | 
  | **Specific Technologies** |  | 
  | WPScan | A free command-line vulnerability scanner for WordPress sites that enumerates the core version, plugins, themes, and users, and checks them against a database of known vulnerabilities. | 
  | **Timeline** |  | 
