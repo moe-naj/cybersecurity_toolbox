@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-10 15:06:00.000'
+last_edited_time: '2026-11-11 16:33:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -196,6 +196,7 @@ last_edited_time: '2026-11-10 15:06:00.000'
  | Timeline Explorer | A tool to view CSV and Excel files with easy filtering, grouping, and sorting — the typical workflow is to first use EvtxECmd to parse all Windows event logs into one CSV, then load that CSV into Timeline Explorer for filtering and viewing. | 
  | **Vulnerabilities** |  | 
  | Bandit | An open-source static analysis (SAST) tool that scans Python code for common security issues (hardcoded secrets, insecure functions, weak crypto, risky subprocess usage) before it ships. | 
+ | Local Exploit Suggester | A Metasploit post module that checks an existing session against all of Metasploit's local privilege-escalation exploits and reports which ones are likely to succeed on that target: `multi/recon/local_exploit_suggester`. | 
  | Trivy | An open-source vulnerability scanner for containers, container images, and infrastructure-as-code (plus SBOM and secrets scanning), used to catch known CVEs and misconfigurations before deploy. | 
  | **Windows** |  | 
  | Advanced Installer | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
