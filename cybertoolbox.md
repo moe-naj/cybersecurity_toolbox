@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-11 16:33:00.000'
+last_edited_time: '2026-11-13 19:25:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -17,6 +17,7 @@ last_edited_time: '2026-11-11 16:33:00.000'
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | PingCastle | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
+ | PowerView | `PowerView.ps1` is a PowerShell reconnaissance module for Active Directory — part of PowerSploit, used to enumerate users, groups, ACLs, trusts, and permission chains to map out privilege-escalation and lateral-movement paths across a domain including Kerberoastable accounts. | 
  | **Binary** |  | 
  | binwalk | A firmware/binary analysis tool that scans a file for embedded file signatures, headers, and compressed/archived data to identify and extract hidden or nested content. | 
  | Capa | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
