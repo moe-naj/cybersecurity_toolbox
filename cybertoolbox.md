@@ -4,18 +4,23 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-13 19:25:00.000'
+last_edited_time: '2026-11-16 00:53:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
  | **Active Directory** |  | 
+ | ADFSRelay | A relay tool that captures a victim's ADFS login flow (WS-Federation/SAML redirect and NTLM handshake) and extracts a valid authenticated session cookie for that victim, instead of just relaying raw NTLM like ntlmrelayx. | 
  | adPEAS | `adPEAS.ps1` is a PowerShell-based Active Directory enumeration script (inspired by the *PEAS (`winPEAS`/`linPEAS`) family of privilege-escalation-enumeration tools) that automates recon of an AD domain — pulling domain/forest info, trusts, users, groups, GPOs, ACLs, Kerberoastable accounts, and misconfigurations — in one pass, often used to quickly surface privilege-escalation paths during or after a compromise. | 
  | ADRecon | Used to assess the security posture of Active Directory environments. It facilitates the identification of misconfigurations, privilege escalation paths, and potential attack vectors. | 
+ | bloodhound-python | A Python tool that authenticates to Active Directory and pulls its structure (users, groups, permissions, sessions, trust relationships) into a dataset you load into BloodHound's graph UI to visually find privilege-escalation paths. | 
  | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
  | Coercer | A Python tool that forces a Windows host to authenticate to an attacker-controlled listener by abusing multiple RPC protocols (PetitPotam-style MS-EFSRPC, PrinterBug, etc.), primarily for NTLM/Kerberos relay or hash capture. | 
+ | impacket-ticketConverter | Converts a Kerberos ticket between the Windows .kirbi format and the Linux/MIT .ccache format (in either direction), so a ticket obtained on Windows can be used by Linux Kerberos tools and vice versa. | 
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
+ | kvno | A Kerberos utility that requests a service ticket for a given service principal using your existing TGT, mainly used to check a service's current key version number but also handy as a simple test of whether your Kerberos credentials actually work end-to-end. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
+ | OUned | A tool that abuses `WriteGPLink`-only access on an OU by linking a new, not-yet-existing GPO GUID to it and then creating that GPO object yourself, turning a weak "choose which policies apply" right into full control over a brand-new Group Policy pushed onto everything in that OU. | 
  | PingCastle | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | PowerView | `PowerView.ps1` is a PowerShell reconnaissance module for Active Directory — part of PowerSploit, used to enumerate users, groups, ACLs, trusts, and permission chains to map out privilege-escalation and lateral-movement paths across a domain including Kerberoastable accounts. | 
  | **Binary** |  | 
@@ -147,6 +152,7 @@ last_edited_time: '2026-11-13 19:25:00.000'
  | IPinfo.io | An IP intelligence/geolocation provider that returns location, ASN, org, and related data for any address; quick curl lookup: `curl ipinfo.io` (your public IP) or `curl ipinfo.io/8.8.8.8`. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
  | NetworkMiner | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
+ | proxychains4 | A tool that forces any command's network traffic through a SOCKS/HTTP proxy (here, our chisel tunnel) without that command needing built-in proxy support. | 
  | SIPVicious | An open-source suite of security tools for auditing SIP-based VoIP systems (scanning servers, enumerating extensions, and cracking passwords). | 
  | Snort | Network intrusion detection/prevention systems that analyze traffic for malicious patterns | 
  | Suricata | Network intrusion detection/prevention systems that analyze traffic for malicious patterns. Uses rule syntax compatible with Snort, enabling you to leverage existing community rule sets. | 
@@ -184,7 +190,7 @@ last_edited_time: '2026-11-13 19:25:00.000'
  | TruffleHog | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | unshadow | Merges `/etc/passwd` and `/etc/shadow` into a single file combining each user's account info with their password hash, producing the format John the Ripper expects as input for offline password cracking. | 
  | WCE | Windows Credential Editor is a credential-dumping tool that extracts NTLM hashes, cleartext passwords, and Kerberos tickets directly from LSASS process memory on Windows. | 
- | Security Tooling |  | 
+ | **Security Tooling** |  | 
  | aide | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
  | Falco  | An open-source, eBPF-based runtime security tool that detects abnormal behavior by monitoring kernel syscalls across hosts, containers, and Kubernetes in real time. | 
  | **Specific Technologies** |  | 
@@ -213,11 +219,13 @@ last_edited_time: '2026-11-13 19:25:00.000'
  | LOLBAS | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
  | LOLDrivers | LOLDrivers (Living Off the Land Drivers) are legitimate, cryptographically signed Windows drivers that attackers abuse to bypass security controls and disable antivirus tools. | 
  | NetExec (nxc) | The successor to `crackmapexec `and a multi-protocol (SMB, WinRM, LDAP, MSSQL, RDP, SSH, etc.) post-exploitation and lateral-movement tool for enumerating, authenticating against, and abusing Windows/Active Directory environments. | 
+ | ntlmrelayx | An Impacket tool that listens for incoming NTLM authentication attempts (SMB/HTTP/etc.) and relays them live to a target service to authenticate as the coerced victim, without ever cracking the password hash. | 
  | PowerShell ISE | PowerShell ISE (Integrated Scripting Environment) is a built-in Windows GUI application for writing, editing, and interactively running PowerShell scripts (`.ps1` files) and commands, including executing them line-by-line or in full, with a console pane showing live output. | 
  | SBECmd | An Eric Zimmerman’s command-line tool for parsing Windows ShellBags artifacts to reveal folder access history, view preferences, and deleted directory evidence. | 
  | sccainfo | A command-line tool from the `libscca `library that displays detailed information about Windows Prefetch files | 
  | SIDR | Search Index DB Reporter is a Rust-based, open-source tool by Stroz Friedberg that parses Windows's `Windows.edb`/`Windows.db` search-index databases and extracts their cached file metadata and indexed document-content previews into JSON/CSV reports. | 
+ | smbpasswd | A Linux/Samba command-line tool for setting or changing a user's SMB/Samba password, and when used remotely it can change a Windows domain account's password over the SMB protocol. | 
  | SrumECmd | An Eric Zimmerman CLI tool that parses a Windows SRUDB.dat (SRUM) ESE database offline and exports its tables (including Application Resource Usage and Network Usage, with all IDs resolved to real app paths/SIDs) to readable CSV files. | 
  | wevtutil | Retrieve, manage, and configure Windows Event Logs and log publishers via the command line. | 
- | wmiexec.py | An Impacket tool that gets a semi-interactive remote shell on a Windows host by using WMI (Win32_Process.Create) to launch commands and redirecting their output to a randomly-named file under the target's ADMIN$ share, which it then reads back and deletes — all without dropping any binary or service on the target. | 
+ | wmiexec | An Impacket tool that gets a semi-interactive remote shell on a Windows host by using WMI (Win32_Process.Create) to launch commands and redirecting their output to a randomly-named file under the target's ADMIN$ share, which it then reads back and deletes — all without dropping any binary or service on the target. | 
 
