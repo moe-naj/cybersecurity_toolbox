@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-16 00:53:00.000'
+last_edited_time: '2026-11-18 20:54:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -47,6 +47,8 @@ last_edited_time: '2026-11-16 00:53:00.000'
  | r2 | A command-line reverse-engineering framework/disassembler/debugger for analyzing binaries; example: `r2 -A ./a.out`. | 
  | rasm2 | A `radare2`’s command-line assembler and disassembler for many architectures, including x86, ARM, and BPF. | 
  | scdbg | A Windows shellcode analysis tool that emulates/traces shellcode to reveal its behavior (e.g., API calls, decoded strings, and IOCs) without running it on a real host. | 
+ | steghide | A tool that hides/extracts data inside image or audio files using a passphrase, embedding it in a way that's invisible to casual inspection. | 
+ | stegseek | A fast brute-forcer for steghide-protected files — it tries passphrases from a wordlist (or an empty one) against a steghide-embedded file to recover the hidden data without needing to know the passphrase in advance. | 
  | UPX | Used to compress and decompress executable files, reducing their size without affecting functionality. It’s used for packing binaries and can also be used to unpack them for analysis. | 
  | **Cloud** |  | 
  | Pacu | An open‑source AWS exploitation framework (post‑compromise cloud pentest tool) that uses modular commands to enumerate an AWS environment and attempt privilege escalation, persistence, and data access using stolen/assumed AWS credentials. | 
