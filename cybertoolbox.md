@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-19 15:51:00.000'
+last_edited_time: '2026-11-20 15:24:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -31,6 +31,7 @@ last_edited_time: '2026-11-19 15:51:00.000'
  | Cutter | A cross‑platform GUI front-end for radare2 used to disassemble/decompile and analyze binaries during reverse engineering. | 
  | Detect It Easy | Used for analyzing binary files to identify their compiler, packer, or cryptor. It provides detailed information about executable formats and supports multiple architectures and file types. | 
  | Floss | A malware/forensics tool that extracts and deobfuscates (including runtime-decoded) strings from executables to reveal hidden IOCs like URLs, file paths, and commands. Example: `floss malware.exe > floss_strings.txt` | 
+ | GDB | A debugger that runs a program under your control so you can pause it, step through it instruction by instruction, and inspect its registers and memory. | 
  | Ghidra | A reverse engineering suite (from the NSA) used to disassemble, decompile, and analyze compiled binaries. | 
  | HxD | HxD is a lightweight Windows hex editor and disk/memory editor used to view, search, and modify raw bytes in files, drives, and RAM for forensic or reverse-engineering work. | 
  | IDA Pro | Interactive DisAssembler is a disassembler/decompiler that turns compiled binaries (like the malicious driver or payload here) back into readable assembly or pseudo-C — its main cyber use case is static reverse engineering: figuring out what a piece of malware or an exploit actually does without running it. | 
