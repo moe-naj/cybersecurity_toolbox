@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-20 15:24:00.000'
+last_edited_time: '2026-11-22 03:16:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -16,8 +16,10 @@ last_edited_time: '2026-11-20 15:24:00.000'
  | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
  | Coercer | A Python tool that forces a Windows host to authenticate to an attacker-controlled listener by abusing multiple RPC protocols (PetitPotam-style MS-EFSRPC, PrinterBug, etc.), primarily for NTLM/Kerberos relay or hash capture. | 
- | impacket-ticketConverter | Converts a Kerberos ticket between the Windows .kirbi format and the Linux/MIT .ccache format (in either direction), so a ticket obtained on Windows can be used by Linux Kerberos tools and vice versa. | 
+ | impacket-getTGT | Tool that requests a Kerberos TGT from a domain's KDC for a given user/password (or hash) and saves it locally as a `.ccache` file for reuse by other Kerberos-aware tools. | 
+ | impacket-ticketConverter | Converts a Kerberos ticket between the Windows `.kirbi` format and the Linux/MIT `.ccache` format (in either direction), so a ticket obtained on Windows can be used by Linux Kerberos tools and vice versa. | 
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
+ | kinit | Linux/Kerberos command that requests a TGT (Ticket Granting Ticket) from the KDC for a given username/password and caches it locally for later Kerberos-authenticated tools to use. | 
  | kvno | A Kerberos utility that requests a service ticket for a given service principal using your existing TGT, mainly used to check a service's current key version number but also handy as a simple test of whether your Kerberos credentials actually work end-to-end. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | OUned | A tool that abuses `WriteGPLink`-only access on an OU by linking a new, not-yet-existing GPO GUID to it and then creating that GPO object yourself, turning a weak "choose which policies apply" right into full control over a brand-new Group Policy pushed onto everything in that OU. | 
@@ -156,6 +158,7 @@ last_edited_time: '2026-11-20 15:24:00.000'
  | IPinfo.io | An IP intelligence/geolocation provider that returns location, ASN, org, and related data for any address; quick curl lookup: `curl ipinfo.io` (your public IP) or `curl ipinfo.io/8.8.8.8`. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
  | NetworkMiner | NetworkMiner focuses on reconstruction and evidence extraction rather than deep packet inspection. It’s used by incident responders, DFIR analysts, and penetration testers for quick forensics. Use cases include: session reconstruction, file extraction, credential recovery, artifact review, host profiling and passive fingerprinting. | 
+ | ntpdate | A command that queries an NTP time server and immediately sets your local system clock to match it. Needed to sometimes work in an AD environment when the clock skew is great. | 
  | proxychains4 | A tool that forces any command's network traffic through a SOCKS/HTTP proxy (here, our chisel tunnel) without that command needing built-in proxy support. | 
  | SIPVicious | An open-source suite of security tools for auditing SIP-based VoIP systems (scanning servers, enumerating extensions, and cracking passwords). | 
  | Snort | Network intrusion detection/prevention systems that analyze traffic for malicious patterns | 
