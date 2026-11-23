@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-22 03:16:00.000'
+last_edited_time: '2026-11-22 05:53:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -21,6 +21,7 @@ last_edited_time: '2026-11-22 03:16:00.000'
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
  | kinit | Linux/Kerberos command that requests a TGT (Ticket Granting Ticket) from the KDC for a given username/password and caches it locally for later Kerberos-authenticated tools to use. | 
  | kvno | A Kerberos utility that requests a service ticket for a given service principal using your existing TGT, mainly used to check a service's current key version number but also handy as a simple test of whether your Kerberos credentials actually work end-to-end. | 
+ | ldapsearch  | OpenLDAP command-line client that connects to an LDAP/LDAPS server and queries directory objects (users, groups, computers, attributes) using a filter and base DN you specify. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | OUned | A tool that abuses `WriteGPLink`-only access on an OU by linking a new, not-yet-existing GPO GUID to it and then creating that GPO object yourself, turning a weak "choose which policies apply" right into full control over a brand-new Group Policy pushed onto everything in that OU. | 
  | PingCastle | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
