@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-22 05:53:00.000'
+last_edited_time: '2026-11-24 19:56:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -16,6 +16,7 @@ last_edited_time: '2026-11-22 05:53:00.000'
  | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
  | Coercer | A Python tool that forces a Windows host to authenticate to an attacker-controlled listener by abusing multiple RPC protocols (PetitPotam-style MS-EFSRPC, PrinterBug, etc.), primarily for NTLM/Kerberos relay or hash capture. | 
+ | icacls | Windows' CLI tool for viewing and modifying NTFS file/folder permissions (ACLs). | 
  | impacket-getTGT | Tool that requests a Kerberos TGT from a domain's KDC for a given user/password (or hash) and saves it locally as a `.ccache` file for reuse by other Kerberos-aware tools. | 
  | impacket-ticketConverter | Converts a Kerberos ticket between the Windows `.kirbi` format and the Linux/MIT `.ccache` format (in either direction), so a ticket obtained on Windows can be used by Linux Kerberos tools and vice versa. | 
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
@@ -201,6 +202,7 @@ last_edited_time: '2026-11-22 05:53:00.000'
  | **Security Tooling** |  | 
  | aide | AIDE (Advanced Intrusion Detection Environment) is a Linux file integrity monitoring tool that builds a baseline of file attributes and re-checks the system to flag unexpected changes that may indicate tampering or compromise. | 
  | Falco  | An open-source, eBPF-based runtime security tool that detects abnormal behavior by monitoring kernel syscalls across hosts, containers, and Kubernetes in real time. | 
+ | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
  | **Specific Technologies** |  | 
  | WPScan | A free command-line vulnerability scanner for WordPress sites that enumerates the core version, plugins, themes, and users, and checks them against a database of known vulnerabilities. | 
  | **Timeline** |  | 
@@ -216,12 +218,12 @@ last_edited_time: '2026-11-22 05:53:00.000'
  | **Windows** |  | 
  | Advanced Installer | A Windows GUI tool for building and editing MSI installer packages. In DFIR, it is a primary tool for opening malicious `.msi` files and inspecting its internal structure without executing it  | 
  | attrib | A Windows command that displays or changes file attributes (e.g., set Hidden with `attrib +h file.txt` or remove it with `attrib -h file.txt`). | 
+ | cmdkey | Windows' CLI tool for viewing/adding/removing saved credentials in the Credential Manager vault. | 
  | Cygwin | A Windows port of a Unix-like environment: a POSIX compatibility DLL plus a collection of GNU/Linux tools (bash, grep, gcc, etc.) that run on Windows without a VM. | 
  | dnSpy | A debugger and .NET assembly editor. It is used for decompiling and debugging .NET applications, which is particularly useful in reverse engineering .NET binaries to understand their functionality. | 
  | evtx_dump | A fast Rust CLI tool that parses Windows Event Log (`.evtx`) files and outputs their records as XML (or JSON). | 
  | EvtxECmd | A tool that parses Windows Event Log (`.evtx`) files into structured, human-readable output (CSV, JSON, XML, or SQLite) for analysis. Basic usage:`EvtxECmd.exe -f "C:\Logs\Security.evtx" --csv "C:\Out" --csvf Security.csv` | 
  | GodPotato-NET4.exe | The .NET Framework 4 build of GodPotato. It is a public Potato-family privilege escalation tool that abuses `SeImpersonatePrivilege `by coercing the DCOM/RPC service (`rpcss`) to authenticate to it, then uses the captured `SYSTEM `token to run a command as `NT AUTHORITY\SYSTEM`. | 
- | hayabusa | A rust-based Sigma-compatible threat-hunting and DFIR timeline generator that parses Windows EVTX event logs into a single CSV/JSON timeline of detections. | 
  | JLECmd | An Eric Zimmerman’s command-line tool that parses Windows Jump List files (`AutomaticDestinations `and `CustomDestinations`) into readable CSV/JSON output. | 
  | lnkinfo | A Windows shortcut (.LNK) forensic analysis tool used to parse and extract metadata/artifacts from LNK files (e.g., target path, timestamps, volume/host details) for investigations. | 
  | LOLBAS | LOLBAS (Living Off The Land Binaries and Scripts) is a curated catalog of legitimate Windows binaries/scripts that attackers commonly abuse to “live off the land” for execution, discovery, and defense evasion. | 
