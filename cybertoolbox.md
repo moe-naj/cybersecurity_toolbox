@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-24 19:56:00.000'
+last_edited_time: '2026-11-26 02:26:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -16,17 +16,22 @@ last_edited_time: '2026-11-24 19:56:00.000'
  | bloodyAD | A Python-based Active Directory manipulation/privilege-abuse tool that lets you read and write AD objects (group memberships, passwords, ACLs, etc.) directly over LDAP using a set of valid credentials and their existing AD permissions. | 
  | certipy-ad | A Python tool for enumerating and exploiting Active Directory Certificate Services (ADCS) misconfigurations (ESC1–ESC8, etc.) used to discover vulnerable certificate templates, enrollment rights, and abuse paths that can lead to privilege escalation (often straight to Domain Admin via certificate authentication). | 
  | Coercer | A Python tool that forces a Windows host to authenticate to an attacker-controlled listener by abusing multiple RPC protocols (PetitPotam-style MS-EFSRPC, PrinterBug, etc.), primarily for NTLM/Kerberos relay or hash capture. | 
+ | DFSCoerce | A Python PoC that abuses the MS-DFSNM RPC interface (`NetrDfsRemoveStdRoot`/similar calls) to coerce a Windows host — unauthenticated or with minimal rights — into initiating an outbound SMB authentication to an attacker-specified target. | 
  | icacls | Windows' CLI tool for viewing and modifying NTFS file/folder permissions (ACLs). | 
  | impacket-getTGT | Tool that requests a Kerberos TGT from a domain's KDC for a given user/password (or hash) and saves it locally as a `.ccache` file for reuse by other Kerberos-aware tools. | 
  | impacket-ticketConverter | Converts a Kerberos ticket between the Windows `.kirbi` format and the Linux/MIT `.ccache` format (in either direction), so a ticket obtained on Windows can be used by Linux Kerberos tools and vice versa. | 
  | Kerbrute | Go-based tool that abuses Kerberos pre-authentication to enumerate valid Active Directory usernames and perform password spraying/bruteforcing without triggering traditional account lockouts. | 
  | kinit | Linux/Kerberos command that requests a TGT (Ticket Granting Ticket) from the KDC for a given username/password and caches it locally for later Kerberos-authenticated tools to use. | 
+ | KrbRelay | A local Kerberos relay tool that abuses DCOM/RPC OXID resolution to coerce a privileged Windows session on the same host into authenticating to an attacker-chosen SPN, relaying that authentication to escalate privileges or access another local service. | 
+ | krbrelayx | Python toolkit for Kerberos relaying and unconstrained-delegation TGT capture — it runs rogue SMB/HTTP/LDAP listeners that receive coerced Kerberos authentications and either relay them onward or, in capture mode, decrypt and save any forwarded TGT using a service's own keytab key. | 
  | kvno | A Kerberos utility that requests a service ticket for a given service principal using your existing TGT, mainly used to check a service's current key version number but also handy as a simple test of whether your Kerberos credentials actually work end-to-end. | 
  | ldapsearch  | OpenLDAP command-line client that connects to an LDAP/LDAPS server and queries directory objects (users, groups, computers, attributes) using a filter and base DN you specify. | 
  | Nltest | A built-in Windows tool to query/troubleshoot Active Directory (DC discovery, trusts, forests, secure channels). Example usage: `nltest /dsgetdc:corp.local` and `nltest /sc_verify:corp.local`. | 
  | OUned | A tool that abuses `WriteGPLink`-only access on an OU by linking a new, not-yet-existing GPO GUID to it and then creating that GPO object yourself, turning a weak "choose which policies apply" right into full control over a brand-new Group Policy pushed onto everything in that OU. | 
  | PingCastle | Provides a fast and comprehensive Active Directory health check and security assessment, helping identify misconfigurations, weak permissions, and potential attack paths. | 
  | PowerView | `PowerView.ps1` is a PowerShell reconnaissance module for Active Directory — part of PowerSploit, used to enumerate users, groups, ACLs, trusts, and permission chains to map out privilege-escalation and lateral-movement paths across a domain including Kerberoastable accounts. | 
+ | RunasCs | A C# tool that runs a command as another user via `CreateProcessWithLogonW`/`CreateProcessWithTokenW`, specifically built to avoid the restrictions `runas.exe` hits (no password prompt needed, works non-interactively, can bypass UAC/session-type limitations). | 
+ | Trustify | A .NET tool (bytewreck) that creates AD domain/forest trusts over RPC/LSA with full attribute control — including `TRUST_ATTRIBUTE_CROSS_ORGANIZATION_ENABLE_TGT_DELEGATION `— which `netdom `and the GUI can't set, making it the tool for AORTA's inbound trust half. | 
  | **Binary** |  | 
  | binwalk | A firmware/binary analysis tool that scans a file for embedded file signatures, headers, and compressed/archived data to identify and extract hidden or nested content. | 
  | Capa | An open-source tool (by Mandiant) that identifies a binary’s likely capabilities/behaviors (e.g., persistence, injection, networking) by matching rules against the file. | 
@@ -41,6 +46,7 @@ last_edited_time: '2026-11-24 19:56:00.000'
  | IDA Pro | Interactive DisAssembler is a disassembler/decompiler that turns compiled binaries (like the malicious driver or payload here) back into readable assembly or pseudo-C — its main cyber use case is static reverse engineering: figuring out what a piece of malware or an exploit actually does without running it. | 
  | jadx | Dex to Java decompiler. Command line and GUI tools for producing Java source code from Android Dex and APK files. | 
  | JD-GUI | A standalone Windows GUI tool that decompiles Java `.class` files and `.jar` archives back into readable Java source code, letting you inspect the actual logic inside a Java library without needing the original source. | 
+ | mcs | Mono's C# compiler — compiles .cs source into Windows-compatible .exe/.dll binaries on Linux. | 
  | ndisasm | The Netwide Disassembler (from the NASM package) that converts raw binary machine code into readable x86/x86-64 assembly. | 
  | nm | A `binutils` command that lists symbols (functions/variables) from an object file or binary to help with reverse engineering/debugging; example: `nm -C ./a.out | head`. | 
  | Online Solidity Decompiler | A web-based tool that decompiles EVM bytecode (deployed Ethereum contracts) into a readable, Solidity-like representation for reverse engineering and analysis. | 
@@ -118,8 +124,10 @@ last_edited_time: '2026-11-24 19:56:00.000'
  | uniq | Collapse and count adjacent duplicate lines, often after `sort`: `sort file.txt | uniq -c` | 
  | **Linux** |  | 
  | ausearch | Queries and interprets Linux audit daemon logs (`auditd`), decoding hex-encoded command arguments and resolving UIDs to account names when run with `-i` (or reading an offline log file with `-if`). | 
+ | faketime | A `LD_PRELOAD` wrapper that makes a program see a spoofed system time (e.g. `faketime '+7 hours' <cmd>`) without changing the real clock — useful for example to fix Kerberos clock-skew errors between the attack box and the DCs. | 
  | GTFOBins | A curated list of Unix binaries that can be abused to bypass local security restrictions (shell access, file read/write, privesc) when misconfigured with sudo, SUID, or Linux capabilities. [https://gtfobins.org/](https://gtfobins.org/) | 
  | journalctl | The command-line tool for querying and viewing logs collected by `systemd-journald`, Linux's system logging service (covers kernel, boot, and service/unit logs in one structured, timestamped store). | 
+ | sudoedit | A sudo-wrapped editor command that safely opens a root-owned file for editing in your normal $EDITOR, avoiding the risks of running the editor itself as root. | 
  | utmpdump | Parses the binary login-session databases (`wtmp`/`btmp`/`lastlog`), which are fixed-size C struct arrays that `cat`/`strings `can't render correctly. | 
  | **LLM** |  | 
  | garak | An open-source vulnerability scanner for LLMs that probes models for weaknesses like prompt injection, jailbreaks, data leakage, and other failure modes using automated adversarial test suites. | 
@@ -156,6 +164,7 @@ last_edited_time: '2026-11-24 19:56:00.000'
  | Brim | A desktop GUI tool that visualizes and explores Zeek and Suricata data. | 
  | chisel | A TCP/UDP tunneling tool that creates a fast, encrypted tunnel over HTTP, commonly used for pivoting and port forwarding. | 
  | dnscat2 | A DNS tunneling tool that creates an encrypted command-and-control channel over DNS queries and responses. | 
+ | dnscmd | The tool `dnscmd.exe` is Microsoft's native CLI for remotely administering a Windows DNS Server over the MS-DNSP RPC protocol — creating/configuring zones, forwarders, and records without touching WMI or PowerShell remoting. | 
  | editcap | A Wireshark tool that edits packet capture files (PCAP/PCAPNG) without re-capturing—commonly to slice by time, trim packet ranges, remove duplicates, or convert formats. Example: `editcap -A "2026-05-28 14:00:00" -B "2026-05-28 14:10:00" input.pcapng output_10min.pcapng`. This is also used for Network Miner in case of license challenges. | 
  | IPinfo.io | An IP intelligence/geolocation provider that returns location, ASN, org, and related data for any address; quick curl lookup: `curl ipinfo.io` (your public IP) or `curl ipinfo.io/8.8.8.8`. | 
  | netsh | A Windows command-line utility for viewing and configuring network settings (interfaces, IP, firewall, Wi‑Fi, routing, etc.). | 
@@ -195,6 +204,7 @@ last_edited_time: '2026-11-24 19:56:00.000'
  | JDumpSpider | A Java tool that parses a JVM heap dump file and automatically extracts known sensitive values (datasource credentials, config properties, Redis/Shiro keys) by walking the object graph for recognized class types, instead of manually grepping raw strings. | 
  | john | An offline password-cracking tool that takes hashed credentials and attempts to recover the original plaintext by testing candidate passwords via wordlists, rules, or brute-force. | 
  | jwt_tool | A Python command-line tool for testing and attacking JSON Web Tokens — decoding, tampering with claims, cracking weak HS256 secrets, and probing for common JWT vulnerabilities (alg confusion, `alg:none`, signature stripping). | 
+ | pypykatz | A pure-Python reimplementation of Mimikatz for extracting credentials, hashes, and Kerberos tickets from an LSASS memory dump. | 
  | spaCy | A Python NLP library you can use to build/customize named-entity recognition to find and label PII in text (names, locations, orgs, IDs) for data discovery, redaction, and DLP workflows. | 
  | TruffleHog | An open-source secret-scanning tool used to find exposed credentials (API keys, tokens, passwords) in Git repositories and other artifact sources. It works by scanning commits and file contents for high-entropy strings and known secret patterns, and can validate findings. Common use cases include CI/CD “prevention” checks, incident response (finding leaked keys), and repo hygiene audits. | 
  | unshadow | Merges `/etc/passwd` and `/etc/shadow` into a single file combining each user's account info with their password hash, producing the format John the Ripper expects as input for offline password cracking. | 
