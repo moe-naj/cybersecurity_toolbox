@@ -4,7 +4,7 @@ title: Cybersecurity Toolbox
 date: '2026-03-24 15:08:00.000'
 from_notion: https://app.notion.com/p/Cybersecurity-Toolbox-32de74c00d7f80adbfcecf0424b2b0e7
 author: Moe
-last_edited_time: '2026-11-26 02:26:00.000'
+last_edited_time: '2026-11-27 20:29:00.000'
 ---
  | **Tool** | **Details** | 
  | ---- | ---- | 
@@ -38,6 +38,7 @@ last_edited_time: '2026-11-26 02:26:00.000'
  | CFF Explorer | Raw dump a resource inside an executable to disk for further analysis. If the dumped resource is a DLL, you can use dnSpy to disassemble it for analysis. | 
  | checksec | A command-line tool that reports common binary exploit mitigations (e.g., NX, PIE, RELRO, canary) for an executable; example: `checksec --file ./a.out`. | 
  | Cutter | A cross‑platform GUI front-end for radare2 used to disassemble/decompile and analyze binaries during reverse engineering. | 
+ | cyclic | A `pwntools `utility (available as the pwn cyclic CLI command or from pwn import cyclic in Python) that generates a De Bruijn sequence, a string where every fixed-length substring is unique, and provides a matching lookup function (cyclic_find) to take any captured chunk of that pattern and return its exact byte offset within the original sequence, so you can precisely determine how many bytes of overflow input reach a given point in memory, like a crashed return address, without guessing. | 
  | Detect It Easy | Used for analyzing binary files to identify their compiler, packer, or cryptor. It provides detailed information about executable formats and supports multiple architectures and file types. | 
  | Floss | A malware/forensics tool that extracts and deobfuscates (including runtime-decoded) strings from executables to reveal hidden IOCs like URLs, file paths, and commands. Example: `floss malware.exe > floss_strings.txt` | 
  | GDB | A debugger that runs a program under your control so you can pause it, step through it instruction by instruction, and inspect its registers and memory. | 
@@ -57,6 +58,7 @@ last_edited_time: '2026-11-26 02:26:00.000'
  | pylingual | Python decompiler that turns compiled `.pyc` (often extracted from malware/droppers) back into readable source; example: `pylingual -o out_dir dumped_module.pyc` . | 
  | r2 | A command-line reverse-engineering framework/disassembler/debugger for analyzing binaries; example: `r2 -A ./a.out`. | 
  | rasm2 | A `radare2`’s command-line assembler and disassembler for many architectures, including x86, ARM, and BPF. | 
+ | readelf | Displays detailed internal information about an ELF binary, its headers, sections, symbols, and their addresses, without running the program. | 
  | scdbg | A Windows shellcode analysis tool that emulates/traces shellcode to reveal its behavior (e.g., API calls, decoded strings, and IOCs) without running it on a real host. | 
  | steghide | A tool that hides/extracts data inside image or audio files using a passphrase, embedding it in a way that's invisible to casual inspection. | 
  | stegseek | A fast brute-forcer for steghide-protected files — it tries passphrases from a wordlist (or an empty one) against a steghide-embedded file to recover the hidden data without needing to know the passphrase in advance. | 
@@ -124,9 +126,11 @@ last_edited_time: '2026-11-26 02:26:00.000'
  | uniq | Collapse and count adjacent duplicate lines, often after `sort`: `sort file.txt | uniq -c` | 
  | **Linux** |  | 
  | ausearch | Queries and interprets Linux audit daemon logs (`auditd`), decoding hex-encoded command arguments and resolving UIDs to account names when run with `-i` (or reading an offline log file with `-if`). | 
+ | checksec | A script (often a `pwntools`/`checksec.sh` utility) that inspects a binary and reports which exploit mitigations are enabled on it — Canary, NX, PIE, RELRO, ASLR-related settings — in one quick summary. | 
  | faketime | A `LD_PRELOAD` wrapper that makes a program see a spoofed system time (e.g. `faketime '+7 hours' <cmd>`) without changing the real clock — useful for example to fix Kerberos clock-skew errors between the attack box and the DCs. | 
  | GTFOBins | A curated list of Unix binaries that can be abused to bypass local security restrictions (shell access, file read/write, privesc) when misconfigured with sudo, SUID, or Linux capabilities. [https://gtfobins.org/](https://gtfobins.org/) | 
  | journalctl | The command-line tool for querying and viewing logs collected by `systemd-journald`, Linux's system logging service (covers kernel, boot, and service/unit logs in one structured, timestamped store). | 
+ | ldd | Lists the shared libraries a given executable depends on, along with the memory addresses where each one is currently loaded (e.g. ldd ovrflw would show which `libc.so` it links against and that library's load address at that moment). | 
  | sudoedit | A sudo-wrapped editor command that safely opens a root-owned file for editing in your normal $EDITOR, avoiding the risks of running the editor itself as root. | 
  | utmpdump | Parses the binary login-session databases (`wtmp`/`btmp`/`lastlog`), which are fixed-size C struct arrays that `cat`/`strings `can't render correctly. | 
  | **LLM** |  | 
